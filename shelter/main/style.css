@@ -158,6 +158,7 @@ nav {
 .about-content {
   display: flex;
   justify-content: center;
+  flex-direction: row-reverse;
 }
 .about-text {
   max-width: 430px;
@@ -287,7 +288,7 @@ nav {
   font-weight: 400;
   font-size: 35px;
   line-height: 45px;
-  margin: 80px 0 60px 0;
+  margin: 80px 0 32.5px 0;
 }
 .help-content {
   margin: 0px 87px 100px 87px;
@@ -296,8 +297,7 @@ nav {
   justify-content: center;
 }
 .help-icon {
-  margin-top: 55px;
-  margin: 0 60px;
+  margin: 27.5px 60px;
   text-align: center;
 }
 .help-icon img {
