@@ -1,0 +1,244 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  height: 100%;
+}
+.container {
+  max-width: 1280px;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+body button {
+  background-color: transparent;
+}
+/* Header */
+header {
+  width: 100%;
+  height: 120px;
+  background-color: white;
+  position: fixed;
+  z-index: 1;
+}
+.header-content {
+  margin: 30px 40px;
+  display: flex;
+  justify-content: space-between;
+  max-height: 60px;
+  align-items: center;
+}
+.logo h1 {
+  font-family: Georgia;
+  font-weight: 400;
+  line-height: 35px;
+  font-size: 32px;
+  color: #545454;
+}
+.logo p {
+  margin-top: 10px;
+  font-family: Arial;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 15px;
+  color: #545454;
+}
+.underlined {
+  padding-bottom: 2px;
+  border-bottom: 3px solid #f1cdb3;
+}
+nav {
+  height: 27px;
+  text-align: center;
+}
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.page-link {
+  text-decoration: none;
+  color: #545454;
+  font-size: 15px;
+  line-height: 24px;
+  font-family: Arial;
+  font-weight: 400;
+  margin: 0 17.5px;
+  transition: 0.3s ease;
+}
+.page-link:hover {
+  color: #292929;
+}
+/* Main */
+main {
+  background-color: #f6f6f6;
+  flex: 1 1 auto;
+  margin-top: 120px;
+}
+.pets-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.cards {
+  display: flex;
+  max-width: 1200px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 45px;
+}
+.bottom-card {
+  margin-top: 30px;
+}
+.card:hover {
+  background-color: white;
+}
+.card:hover #lm1,
+.card:hover #lm2,
+.card:hover #lm3,
+.card:hover #lm4,
+.card:hover #lm5,
+.card:hover #lm6,
+.card:hover #lm7,
+.card:hover #lm8 {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 270px;
+  height: 435px;
+  background-color: #fafafa;
+  align-items: center;
+  transition: 0.5s ease;
+}
+.card button {
+  width: 187px;
+  height: 52px;
+  border: 2px solid #f1cdb3;
+  padding: 15px 45px;
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 22px;
+  background-color: white;
+  border-radius: 100px;
+  transition: 0.5s ease;
+  cursor: pointer;
+}
+.card p {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #545454;
+  margin: 30px 0;
+}
+.pets-content h1 {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45px;
+  width: 400px;
+  margin-top: 80px;
+  margin-bottom: 45px;
+}
+.pag-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  color: #292929;
+  text-align: center;
+  border: 2px solid #f1cdb3;
+  cursor: pointer;
+  transition: 0.5s ease;
+  margin: 0 10px;
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+.buttons {
+  display: flex;
+  margin-bottom: 100px;
+}
+.pag-btn:hover {
+  background-color: #fddcc4;
+  border: 2px solid #fddcc4;
+}
+.disabled {
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+}
+.disabled:hover {
+  border: 2px solid #cdcdcd;
+  color: #cdcdcd;
+  background-color: transparent;
+}
+/* Footer */
+footer {
+  background: radial-gradient(
+    110.67% 538.64% at 5.73% 50%,
+    #513d2f 0%,
+    #1a1a1c 100%
+  );
+}
+footer a {
+  text-decoration: none;
+}
+.footer-content {
+  display: flex;
+  margin: 0 40px;
+  padding-top: 40px;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-content h1 {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45px;
+  color: white;
+  width: 278px;
+  margin-bottom: 20px;
+}
+.footer-content p {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  color: #f1cdb3;
+  width: 260px;
+  margin: 20px 0;
+  margin-left: 20px;
+}
+.contacts-icon {
+  display: flex;
+  align-items: center;
+}
