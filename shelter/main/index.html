@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="shortcut icon" href="../assets/icons/faviconm.png" type="image/x-icon">
   </head>
+  <div class="wrapper">
     <div class="start">
+      <div class="bg-start">
       <header>
         <div class="container">
           <div class="header-content">
@@ -19,7 +21,7 @@
             <nav>
               <ul>
                 <li>
-                  <a href="#about" class="page-link underlined">About the shelter</a>
+                  <a href="#about" class="active">About the shelter</a>
                 </li>
                 <li><a href="#pets" class="page-link">Our pets</a></li>
                 <li><a href="#help" class="page-link">Help the shelter</a></li>
@@ -46,6 +48,7 @@
           </div>
         </div>
       </section>
+    </div>
     </div>
 
     <section id="about" class="about">
@@ -79,16 +82,15 @@
           <div class="pets-content">
             <h1>Our friends who <br>are looking for a house</h1>
             <div class="animals">
-              <button class="arrow">
+              <button class="arrow remove320">
                 <img src="../assets/icons/arrow-left.svg" alt="" />
               </button>
-             
                 <div class="card">
                   <img src="../assets/images/pets-katrine.png" alt="" />
                   <p>Katrine</p>
                   <button>Learn more</button>
                 </div>
-                <div class="card">
+                <div class="card remove320">
                   <img src="../assets/images/pets-jennifer.png" alt="" />
                   <p>Jennifer</p>
                   <button>Learn more</button>
@@ -98,10 +100,15 @@
                   <p>Woody</p>
                   <button>Learn more</button>
                 </div>
-             
-              <button class="arrow">
-                <img src="../assets/icons/arrow-right.svg" alt="" />
-              </button>
+                <div class="arrow320">
+                  <button class="arrow appear320">
+                    <img src="../assets/icons/arrow-left.svg" alt="" />
+                  </button>
+                <button class="arrow">
+                  <img src="../assets/icons/arrow-right.svg" alt="" />
+                </button>
+                </div>
+                
             </div>
             <a href="../pets/index.html"><button class="pets-btn">Get to know the rest</button></a>
           </div>
@@ -152,7 +159,7 @@
     <div class="bg-pets-don">
       <section class="donation">
         <div class="don-content">
-          <img src="../assets/images/donation-dog.png" alt="" class="don-dog" />
+          
           <div class="don-text">
             <h1>You can also make a donation</h1>
             <h4>Name of the bank / Type of the bank</h4>
@@ -167,12 +174,15 @@
               et malesuada fames ac ante ipsum primis in faucibus.
             </p>
           </div>
+          <img src="../assets/images/donation-dog.png" alt="" class="don-dog" />
         </div>
       </section>
     </div>
   </main>
     <footer id="contacts">
+      <div class="footer-bg">
       <div class="footer-content">
+        <div class="appear768">
         <div class="contacts">
           <h1>For questions and suggestions</h1>
           <div class="contacts-icon">
@@ -188,34 +198,78 @@
         </div>
         <div class="contacts">
           <h1>We are waiting for your visit</h1>
-          <div class="contacts-icon">
-            <a
-              href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
-              target="_blank"
-              ><img src="../assets/icons/icon-marker.svg" alt="" />
-            </a>
-            <a
-              href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
-              target="_blank"
-              ><p>1 Central Street, Boston (entrance from the store)</p></a
-            >
-          </div>
-          <div class="contacts-icon">
-            <a
-              href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
-              target="_blank"
-              ><img src="../assets/icons/icon-marker.svg" alt=""
-            /></a>
-            <a
-              href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
-              target="_blank"
-              ><p>18 South Park, London</p></a
-            >
+          
+            <div class="contacts-icon">
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><img src="../assets/icons/icon-marker.svg" alt="" />
+              </a>
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><p>1 Central Street, Boston (entrance from the store)</p></a
+              >
+            </div>
+            <div class="contacts-icon">
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><img src="../assets/icons/icon-marker.svg" alt=""
+              /></a>
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><h4 class="last-text">18 South Park, London</h4></a
+              >
+            </div>
           </div>
         </div>
-        <img src="../assets/images/footer-puppy.png" alt="">
+        <div class="contacts remove768">
+          <h1>For questions and suggestions</h1>
+          <div class="contacts-icon">
+            <a href="mailto:email@shelter.com" target="_blank"><img src="../assets/icons/icon-email.svg" alt=""></a>
+            <a href="mailto:email@shelter.com" target="_blank"><p>email@shelter.com</p></a>
+          </div>
+          <div class="contacts-icon">
+            <a href="tel:+13 674 567 75 54" target="_blank"><img src="../assets/icons/icon-phone.svg" alt=""></a>
+            <a href="tel:+13 674 567 75 54" target="_blank"><p>+13 674 567 75 54</p></a>
+            
+            
+          </div>
+        </div>
+        <div class="contacts remove768">
+          <h1>We are waiting for your visit</h1>
+          
+            <div class="contacts-icon remove768">
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><img src="../assets/icons/icon-marker.svg" alt="" />
+              </a>
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><p>1 Central Street, Boston <br> (entrance from the store)</p></a
+              >
+            </div>
+            <div class="contacts-icon remove768">
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><img src="../assets/icons/icon-marker.svg" alt=""
+              /></a>
+              <a
+                href="https://www.google.com/maps/place/Boston,+UK/@52.9785842,-0.0396082,13z/data=!4m5!3m4!1s0x47d7c2c53856f733:0x8406d541f1a0910c!8m2!3d52.97894!4d-0.026577"
+                target="_blank"
+                ><p>18 South Park, London</p></a
+              >
+            </div>
+          </div>
+        <img src="../assets/images/footer-puppy.png" alt="" class="footer-img">
       </div>
-      
+    </div>
     </footer>
+  </div>
   </body>
 </html>
