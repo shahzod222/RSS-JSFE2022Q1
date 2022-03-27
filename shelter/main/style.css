@@ -348,7 +348,7 @@ main {
 }
 .don-content {
   display: flex;
-  margin: 80px 0px 100px 0px;
+  margin: 0;
   align-items: center;
   justify-content: center;
   flex-direction: row-reverse;
