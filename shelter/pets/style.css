@@ -56,7 +56,9 @@ header {
   font-weight: 400;
   line-height: 35px;
   font-size: 32px;
+  font-size: 32px;
   color: #545454;
+  letter-spacing: 0.06em;
 }
 .logo p {
   margin-top: 10px;
@@ -65,10 +67,19 @@ header {
   font-size: 13px;
   line-height: 15px;
   color: #545454;
+  letter-spacing: 0.1em;
 }
 .underlined {
   padding-bottom: 2px;
   border-bottom: 3px solid #f1cdb3;
+  text-decoration: none;
+  color: #292929;
+  font-size: 15px;
+  line-height: 24px;
+  font-family: Arial;
+  font-weight: 400;
+  margin: 0 17.5px;
+  transition: 0.3s ease;
 }
 nav {
   height: 27px;
@@ -78,6 +89,7 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-decoration: none;
 }
 .page-link {
   text-decoration: none;
@@ -151,6 +163,7 @@ main {
   border-radius: 100px;
   transition: 0.5s ease;
   cursor: pointer;
+  color: #292929;
 }
 .card p {
   font-family: Georgia;
@@ -160,7 +173,7 @@ main {
   color: #545454;
   margin: 30px 0;
 }
-.pets-content h1 {
+.pets-content h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
@@ -168,6 +181,7 @@ main {
   width: 400px;
   margin-top: 80px;
   margin-bottom: 45px;
+  color: #545454;
 }
 .pag-btn {
   width: 52px;
@@ -178,6 +192,21 @@ main {
   border: 2px solid #f1cdb3;
   cursor: pointer;
   transition: 0.5s ease;
+  margin: 0 10px;
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+}
+.pag-btn-n {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  color: #292929;
+  text-align: center;
+  border: 2px solid #f1cdb3;
+  background: #f1cdb3;
+  cursor: pointer;
   margin: 0 10px;
   font-family: Georgia;
   font-weight: 400;
@@ -226,7 +255,7 @@ footer a {
   justify-content: space-between;
   align-items: center;
 }
-.footer-content h1 {
+.footer-content h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
@@ -261,7 +290,7 @@ footer a {
   .header-content {
     margin: 30px;
   }
-  .pets-content h1 {
+  .pets-content h2 {
     margin: 60px 0 15px 0;
   }
   .cards {
@@ -308,7 +337,7 @@ footer a {
     display: flex;
     flex-direction: column;
   }
-  .contacts h1 {
+  .contacts h2 {
     font-size: 25px;
     line-height: 33px;
     display: flex;
@@ -355,7 +384,7 @@ footer a {
   .pag-btn {
     margin: 27px 5px 42px 5px;
   }
-  .pets-content h1 {
+  .pets-content h2 {
     margin: 42px 0 27px 0;
     font-size: 25px;
     line-height: 32px;

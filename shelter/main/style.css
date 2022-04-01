@@ -50,7 +50,7 @@ h6 {
   background-color: #f6f6f6;
 }
 body button {
-  transition: 0.5s ease;
+  transition: 0.35s ease;
   cursor: pointer;
   background-color: transparent;
 }
@@ -142,7 +142,7 @@ main {
   max-width: 460px;
   max-height: 322px;
 }
-.not-only-text h1 {
+.not-only-text h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 44px;
@@ -160,6 +160,7 @@ main {
   color: #cdcdcd;
 }
 .not-only-text button {
+  color: #292929;
   width: 207px;
   height: 52px;
   border-radius: 100px;
@@ -192,7 +193,7 @@ main {
   max-height: 380px;
   margin-left: 120px;
 }
-.about-text h1 {
+.about-text h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
@@ -206,17 +207,18 @@ main {
   line-height: 24px;
   font-family: Arial;
   font-weight: 400;
+  color: #4c4c4c;
 }
 /* Pets section */
 .card:hover {
   background-color: white;
 }
-/* .card:hover #lm1,
+.card:hover #lm1,
 .card:hover #lm2,
 .card:hover #lm3 {
   border: 2px solid #fddcc4;
   background-color: #fddcc4;
-} */
+}
 .pets {
   margin: 0 40px;
 }
@@ -227,13 +229,14 @@ main {
   text-align: center;
   align-items: center;
 }
-.pets-content h1 {
+.pets-content h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
   line-height: 45px;
   width: 400px;
   margin-top: 80px;
+  color: #545454;
 }
 .pets-btn {
   width: 261px;
@@ -248,6 +251,7 @@ main {
   line-height: 22px;
   margin-bottom: 100px;
   cursor: pointer;
+  color: #292929;
 }
 .animals {
   display: flex;
@@ -277,6 +281,7 @@ main {
   margin: 30px 0;
 }
 .card button {
+  color: #292929;
   width: 187px;
   height: 52px;
   border: 2px solid #f1cdb3;
@@ -307,7 +312,7 @@ main {
   flex-direction: column;
   text-align: center;
 }
-.help h1 {
+.help h2 {
   color: #545454;
   width: 308px;
   font-family: Georgia;
@@ -337,6 +342,7 @@ main {
   font-size: 20px;
   line-height: 23px;
   margin-top: 30px;
+  color: #545454;
 }
 .bottom-icon {
   margin-top: 55px;
@@ -366,6 +372,10 @@ main {
   background-color: #f1cdb3;
   text-align: center;
   align-items: center;
+  transition: 0.35s ease;
+}
+.card-number:hover {
+  background-color: #fddcc4;
 }
 .card-number img {
   margin: 10px 7.5px 10px 15px;
@@ -384,7 +394,7 @@ main {
   width: 505px;
   height: 261px;
 }
-.don-text h1 {
+.don-text h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
@@ -432,7 +442,7 @@ footer a {
   justify-content: space-between;
   align-items: center;
 }
-.footer-content h1 {
+.footer-content h2 {
   font-family: Georgia;
   font-weight: 400;
   font-size: 35px;
@@ -508,7 +518,7 @@ footer a {
   .pets {
     margin: 0 30px;
   }
-  .pets-content h1 {
+  .pets-content h2 {
     margin-top: 80px;
   }
   .animals {
@@ -539,7 +549,7 @@ footer a {
   .don-text {
     margin: 80px 0 60px 0;
   }
-  .don-text h1 {
+  .don-text h2 {
     margin: 0;
   }
   .don-dog {
@@ -580,7 +590,7 @@ footer a {
     text-align: center;
     margin: 0 10px;
   }
-  .not-only-text h1 {
+  .not-only-text h2 {
     margin: 0;
     font-size: 25px;
     line-height: 32px;
@@ -622,7 +632,7 @@ footer a {
   .pets {
     margin: 0 10px;
   }
-  .pets h1 {
+  .pets h2 {
     font-size: 25px;
   }
   .animals {
@@ -653,7 +663,7 @@ footer a {
     margin: 0 15px;
     height: auto;
   }
-  .don-text h1 {
+  .don-text h2 {
     font-size: 25px;
     margin: 0 0 12px 0;
     width: 200px;
@@ -688,7 +698,7 @@ footer a {
   .don-content {
     margin: 0;
   }
-  .don-content h1 {
+  .don-content h2 {
     font-size: 25px;
     line-height: 32px;
     margin: 0;
@@ -725,7 +735,7 @@ footer a {
     display: flex;
     flex-direction: column;
   }
-  .contacts h1 {
+  .contacts h2 {
     font-size: 25px;
     line-height: 33px;
     display: flex;
