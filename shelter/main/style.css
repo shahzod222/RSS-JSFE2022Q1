@@ -7,11 +7,14 @@ body {
 }
 .start {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
+  width: 100%;
 }
 .bg-start,
 .footer-bg {
   max-width: 100vw;
   background: url("../assets/images/noise_transparent@2x.png");
+  display: flex;
+  justify-content: center;
 }
 .appear320 {
   display: none;
@@ -19,13 +22,20 @@ body {
 .appear768 {
   display: none;
 }
+.content {
+  display: flex;
+  max-width: 1280px;
+  flex-direction: column;
+  align-items: center;
+}
 .wrapper {
   min-height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .container {
-  max-width: 100vw;
+  width: 1200px;
 }
 ul {
   list-style: none;
@@ -48,6 +58,9 @@ h6 {
 }
 .bg-pets-don {
   background-color: #f6f6f6;
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 body button {
   transition: 0.35s ease;
@@ -138,7 +151,7 @@ main {
   justify-content: space-between;
 }
 .not-only-text {
-  margin-top: 223px;
+  margin-top: 163px;
   max-width: 460px;
   max-height: 322px;
 }
@@ -181,7 +194,7 @@ main {
 /* About shelter section */
 .about {
   background-color: white;
-  margin: 80px 40px;
+  margin: 80px 40px 100px 40px;
 }
 .about-content {
   display: flex;
@@ -190,7 +203,6 @@ main {
 }
 .about-text {
   max-width: 430px;
-  max-height: 380px;
   margin-left: 120px;
 }
 .about-text h2 {
@@ -200,6 +212,7 @@ main {
   line-height: 45px;
   color: #545454;
   width: 363px;
+  margin-top: 14px;
 }
 .about-text p {
   margin-top: 25px;
@@ -220,7 +233,7 @@ main {
   background-color: #fddcc4;
 }
 .pets {
-  margin: 0 40px;
+  margin: 80px 40px 100px 40px;
 }
 
 .pets-content {
@@ -235,7 +248,6 @@ main {
   font-size: 35px;
   line-height: 45px;
   width: 400px;
-  margin-top: 80px;
   color: #545454;
 }
 .pets-btn {
@@ -249,7 +261,6 @@ main {
   font-weight: 400;
   font-size: 17px;
   line-height: 22px;
-  margin-bottom: 100px;
   cursor: pointer;
   color: #292929;
 }
@@ -311,6 +322,8 @@ main {
   align-items: center;
   flex-direction: column;
   text-align: center;
+  margin: 80px 40px 100px 40px;
+  align-items: center;
 }
 .help h2 {
   color: #545454;
@@ -319,10 +332,15 @@ main {
   font-weight: 400;
   font-size: 35px;
   line-height: 45px;
-  margin: 80px 0 32.5px 0;
+  margin-bottom: 32.5px;
 }
 .help-content {
-  margin: 0px 0 100px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.help-icons {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -349,8 +367,7 @@ main {
 }
 /* Donation section */
 .donation {
-  margin: 0 40px;
-  height: 462px;
+  margin: 80px 40px 100px 40px;
 }
 .don-content {
   display: flex;
@@ -373,6 +390,7 @@ main {
   text-align: center;
   align-items: center;
   transition: 0.35s ease;
+  text-decoration: none;
 }
 .card-number:hover {
   background-color: #fddcc4;
@@ -390,7 +408,7 @@ main {
   letter-spacing: 0.05em;
 }
 .don-dog {
-  margin-top: 91px;
+  margin-top: 11px;
   width: 505px;
   height: 261px;
 }
@@ -400,7 +418,6 @@ main {
   font-size: 35px;
   line-height: 45px;
   width: 270px;
-  margin-top: 80px;
   color: #545454;
 }
 .don-text h4 {
@@ -428,6 +445,7 @@ footer {
     #513d2f 0%,
     #1a1a1c 100%
   );
+  width: 100%;
 }
 footer a {
   text-decoration: none;
@@ -441,6 +459,7 @@ footer a {
   padding-top: 40px;
   justify-content: space-between;
   align-items: center;
+  width: 1200px;
 }
 .footer-content h2 {
   font-family: Georgia;
@@ -533,7 +552,7 @@ footer a {
     width: 170px;
     height: 113px;
   }
-  .help-content {
+  .help-icons {
     margin: 0 0 100px 0;
     width: 690px;
   }
@@ -668,7 +687,7 @@ footer a {
     margin: 0 0 12px 0;
     width: 200px;
   }
-  .help-content {
+  .help-icons {
     width: 290px;
     justify-content: flex-start;
     margin: 0 0 42px 0;
@@ -678,7 +697,7 @@ footer a {
     height: 87px;
     margin: 30px 7.5px;
   }
-  .help-content p {
+  .help-icons p {
     font-size: 15px;
     margin-top: 20px;
   }
