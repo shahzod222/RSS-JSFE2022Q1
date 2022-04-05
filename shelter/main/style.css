@@ -9,6 +9,9 @@ body {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   width: 100%;
 }
+.burger {
+  display: none;
+}
 .bg-start,
 .footer-bg {
   max-width: 100vw;
@@ -493,20 +496,34 @@ footer a {
   .appear768 {
     display: flex;
   }
+  .content {
+    max-width: 768px;
+  }
   .container {
-    max-width: 100vw;
+    width: 708px;
   }
   header {
     padding-top: 30px;
     margin: 0 30px 60px 30px;
   }
+  .not-only {
+    margin: 0 30px;
+  }
   .not-only-content {
     flex-direction: column;
     align-items: center;
   }
+  .not-only img {
+    width: 569px;
+    height: 593px;
+    margin-left: 169px;
+  }
   .not-only-text {
     margin: 0;
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .not-only-text a {
     margin: 0 127px;
@@ -515,7 +532,7 @@ footer a {
     margin: 0;
   }
   .about {
-    margin: 0 30px 80px 30px;
+    margin: 80px 30px;
     display: flex;
     justify-content: center;
     max-height: 1048px;
@@ -525,11 +542,12 @@ footer a {
     margin-bottom: 80px;
   }
   .about-content {
-    margin: 80px 0 0 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .about img {
-    margin: 0 69px;
+    margin-bottom: 20px;
   }
   .remove768 {
     display: none;
@@ -537,11 +555,17 @@ footer a {
   .pets {
     margin: 0 30px;
   }
+  .pets-content {
+    margin-bottom: 100px;
+  }
   .pets-content h2 {
     margin-top: 80px;
   }
   .animals {
     width: 100%;
+  }
+  .help h2 {
+    margin-top: 80px;
   }
   .help {
     margin: 0 30px;
@@ -573,6 +597,8 @@ footer a {
   }
   .don-dog {
     margin: 0 0 100px 0;
+    width: 505px;
+    height: 261px;
   }
 
   .footer-content {
@@ -587,16 +613,33 @@ footer a {
 }
 /* Responsive for 320<=screen<768*/
 @media (max-width: 767px) {
+  .content {
+    max-width: 320px;
+  }
+  .container {
+    width: 300px;
+  }
+  .burger {
+    display: block;
+  }
   nav {
     display: none;
   }
   .not-only img {
-    width: calc(100vw - 60px);
+    width: 260px;
+    height: 271.77px;
     margin: 105px 10px 0 50px;
   }
   header {
-    margin: 0 53px 0 10px;
-    padding-top: 10px;
+    margin: 0;
+    padding-top: 30px;
+  }
+  .header-content {
+    width: 258.7px;
+  }
+  .header-content button {
+    width: 30px;
+    height: 22px;
   }
   .not-only {
     margin: 60px 10px 0 10px;
@@ -609,6 +652,11 @@ footer a {
     text-align: center;
     margin: 0 10px;
   }
+  .not-only-text div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   .not-only-text h2 {
     margin: 0;
     font-size: 25px;
@@ -619,6 +667,10 @@ footer a {
     font-size: 15px;
     width: 300px;
     margin: 42px 0;
+  }
+  .about-text h2 {
+    font-size: 25px;
+    line-height: 32px;
   }
   .about-text {
     text-align: center;
@@ -641,7 +693,7 @@ footer a {
   }
   .about-text p {
     width: 270px;
-    text-align: left;
+    text-align: justify;
   }
   .about-content img {
     width: 260px;
@@ -653,6 +705,11 @@ footer a {
   }
   .pets h2 {
     font-size: 25px;
+    line-height: 32px;
+    margin: 42px 0 0 0;
+  }
+  .pets-content {
+    margin: 0;
   }
   .animals {
     margin: 42px 0 0 0;
@@ -682,6 +739,11 @@ footer a {
     margin: 0 15px;
     height: auto;
   }
+  .help h2 {
+    font-size: 25px;
+    line-height: 32px;
+    margin: 42px 0 12px 0;
+  }
   .don-text h2 {
     font-size: 25px;
     margin: 0 0 12px 0;
@@ -690,7 +752,7 @@ footer a {
   .help-icons {
     width: 290px;
     justify-content: flex-start;
-    margin: 0 0 42px 0;
+    margin: 0 0 12px 0;
   }
   .help-icon {
     width: 130px;
@@ -700,6 +762,7 @@ footer a {
   .help-icons p {
     font-size: 15px;
     margin-top: 20px;
+    line-height: 17px;
   }
   .card-number {
     width: 281px;
@@ -735,15 +798,12 @@ footer a {
     align-items: center;
     text-align: center;
   }
-  .card p {
-    font-size: 15px;
-    line-height: 17px;
-  }
   .info {
     font-size: 12px;
     line-height: 18px;
     width: 280px;
     height: auto;
+    text-align: justify;
   }
   .don-dog {
     width: 260px;
@@ -756,7 +816,7 @@ footer a {
   }
   .contacts h2 {
     font-size: 25px;
-    line-height: 33px;
+    line-height: 32px;
     display: flex;
     flex-direction: column;
     align-items: center;
