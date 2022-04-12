@@ -147,7 +147,7 @@ main {
 }
 /* Start section */
 .not-only {
-  margin: 80px 40px 0 40px;
+  margin: 0 40px 0 40px;
 }
 .not-only-content {
   display: flex;
