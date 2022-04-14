@@ -130,7 +130,7 @@ main {
   margin-bottom: 45px;
 }
 .bottom-card {
-  margin-top: 30px;
+  margin: 30px 0 15px 0;
 }
 .card:hover {
   background-color: white;
@@ -185,8 +185,9 @@ main {
   line-height: 45px;
   width: 400px;
   margin-top: 80px;
-  margin-bottom: 45px;
+  margin-bottom: 60px;
   color: #545454;
+  letter-spacing: 0.03em;
 }
 .pag-btn {
   width: 52px;
@@ -248,6 +249,18 @@ footer a {
 .contact-links {
   display: flex;
 }
+.icon {
+  margin-right: 20px;
+}
+.footer-content h2 {
+  font-family: Georgia;
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45px;
+  color: white;
+  width: 278px;
+  margin-bottom: 2px;
+}
 .footer-bg {
   background: url("../assets/images/noise_transparent@2x.png");
   width: 100%;
@@ -262,15 +275,6 @@ footer a {
   align-items: center;
   width: 1200px;
 }
-.footer-content h2 {
-  font-family: Georgia;
-  font-weight: 400;
-  font-size: 35px;
-  line-height: 45px;
-  color: white;
-  width: 278px;
-  margin-bottom: 20px;
-}
 .footer-content p,
 .last-text {
   font-family: Georgia;
@@ -279,8 +283,12 @@ footer a {
   line-height: 23px;
   color: #f1cdb3;
   width: 260px;
-  margin: 20px 0;
-  margin-left: 20px;
+}
+.cont {
+  width: 278px;
+}
+.first-c-i {
+  margin: 32px 0;
 }
 .contacts-icon {
   display: flex;
