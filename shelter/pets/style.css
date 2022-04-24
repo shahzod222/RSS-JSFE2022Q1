@@ -5,6 +5,132 @@ body {
   scroll-behavior: smooth;
   height: 100%;
 }
+.rotateBurger {
+  transition: 0.9s;
+  transform: rotate(90deg);
+}
+.arrow {
+  width: 52px;
+  height: 52px;
+  border-radius: 100px;
+  color: #292929;
+  text-align: center;
+  border: 2px solid #f1cdb3;
+  cursor: pointer;
+  transition: 0.5s ease;
+  cursor: pointer;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+.arrow:hover {
+  border: 2px solid #fddcc4;
+  background-color: #fddcc4;
+}
+/* Popup */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 3;
+}
+.popup-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.popup-main {
+  position: relative;
+  width: 952px;
+  height: 552px;
+}
+.popup-content:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.popup ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.popup ul li::before {
+  content: "\2022";
+  color: #f1cdb3;
+  display: inline-block;
+  width: 1em;
+}
+.popup-content {
+  display: flex;
+  transition: 0.2s ease;
+  background-color: #fafafa;
+  width: 900px;
+  height: 500px;
+  cursor: default;
+  margin: 52px 52px 0 0;
+  border-radius: 9px;
+  overflow: hidden;
+}
+.popup-text {
+  width: 351px;
+  height: 362px;
+  margin: 50px 20px 88px 29px;
+}
+.popup-text h1 {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text p {
+  margin: 40px 0;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text li {
+  font-family: "Georgia";
+  font-weight: 400;
+  line-height: 17px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text li span {
+  font-weight: 700;
+}
+.popup-text h2 {
+  margin: 10px 0 0 0;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+}
+#modal-img {
+  width: 500px;
+  height: 500px;
+}
+/* Popup */
 .container {
   max-width: 100vw;
 }
@@ -15,6 +141,8 @@ body {
 }
 .burger {
   display: none;
+  cursor: pointer;
+  transition: 0.5s;
 }
 ul {
   list-style: none;
@@ -140,6 +268,9 @@ main {
 }
 .card:hover {
   background-color: white;
+  cursor: pointer;
+  transform: scale(1.1);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .card:hover #lm1,
 .card:hover #lm2,
@@ -159,7 +290,7 @@ main {
   height: 435px;
   background-color: #fafafa;
   align-items: center;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
 }
 .card button {
   width: 187px;
@@ -230,7 +361,6 @@ main {
   border: 2px solid #f1cdb3;
   cursor: pointer;
   transition: 0.5s ease;
-
   font-family: Georgia;
   font-weight: 400;
   font-size: 20px;
@@ -244,7 +374,7 @@ main {
   text-align: center;
   border: 2px solid #f1cdb3;
   background: #f1cdb3;
-  cursor: pointer;
+  cursor: default;
   margin: 0 10px;
   font-family: Georgia;
   font-weight: 400;
@@ -261,6 +391,7 @@ main {
 .disabled {
   border: 2px solid #cdcdcd;
   color: #cdcdcd;
+  cursor: default;
 }
 .disabled:hover {
   border: 2px solid #cdcdcd;
@@ -367,12 +498,38 @@ footer a {
 }
 /* Responsive */
 @media (max-width: 1279px) {
+  .popup-text {
+    width: 260px;
+    height: 303px;
+    margin: 10px 9px 37px 11px;
+  }
+  .popup-content {
+    width: 630px;
+    height: 350px;
+  }
+  .popup-text p {
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .popup-main {
+    width: 682px;
+    height: 402px;
+  }
+  #modal-img {
+    width: 350px;
+    height: 350px;
+  }
   .container {
     max-width: 100vw;
   }
   .header-content {
     margin: 30px;
     width: 708px;
+  }
+  .logoAB {
+    display: flex;
+    align-items: center;
   }
   .pets-content h2 {
     margin: 80px 0 15px 0;
@@ -467,11 +624,118 @@ footer a {
   }
 }
 @media (max-width: 767px) {
+  .page-link:hover {
+    color: #fafafa;
+  }
+  nav ul li {
+    text-align: center;
+    margin: 40px 0 0 0;
+  }
+  nav ul li a {
+    margin: 0;
+  }
+  .page-link,
+  .underlined {
+    font-size: 32px;
+    line-height: 51px;
+  }
+  .underlined {
+    color: #fafafa;
+  }
+  .page-link {
+    color: #cdcdcd;
+  }
+  .openBurger {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    padding: 0;
+  }
+  .bgB-open {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: rgba(41, 41, 41, 0.6);
+    height: 100%;
+  }
+  .navBarUl {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .addM {
+    margin: 30px 0 108px 10px;
+  }
+  @keyframes move-rightB {
+    from {
+      right: -320px;
+    }
+    to {
+      right: 0;
+    }
+  }
+  @keyframes move-leftB {
+    from {
+      right: 0;
+    }
+    to {
+      right: -320px;
+    }
+  }
+  .transition-rightB {
+    animation-name: move-rightB;
+    animation-duration: 1.2s;
+  }
+  .transition-leftB {
+    animation-name: move-leftB;
+    animation-duration: 1.2s;
+  }
+  .popup-text {
+    width: 220px;
+    height: 321px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    overflow-y: auto;
+  }
+  .popup-text ul {
+    margin-right: auto;
+  }
+  .popup-content {
+    width: 240px;
+    height: 341px;
+    margin: 52px 31px 0 0;
+  }
+  .popup-main .popup-close {
+    right: 1px;
+    margin: 0;
+  }
+  .popup-text p {
+    margin: 20px 0 24px 0;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .popup-main {
+    width: 271px;
+    height: 393px;
+  }
+  #modal-img {
+    display: none;
+  }
   .burger {
-    width: 30px;
-    height: 22px;
+    display: block;
     position: relative;
-    right: 2px;
+    z-index: 10;
+    margin: 0 0 0 43px;
   }
   .pb1 {
     left: -2px;
@@ -542,11 +806,15 @@ footer a {
     align-items: center;
   }
   .container {
+    width: auto;
     max-width: 100vw;
   }
   .header-content {
     margin: 30px 50px 30px 10px;
-    width: 258.7px;
+    max-height: none;
+    width: auto;
+    display: flex;
+    flex-direction: column;
   }
   .header-content button {
     width: 30px;
@@ -562,7 +830,7 @@ footer a {
     max-width: 320px;
     justify-content: center;
   }
-  nav {
+  nav ul {
     display: none;
   }
   .remove320 {

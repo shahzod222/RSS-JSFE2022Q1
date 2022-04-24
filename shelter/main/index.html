@@ -13,30 +13,38 @@
     <div class="start">
       <div class="bg-start">
         <div class="content">
-      <header>
+          <div class="bgB" id="bgB">
+      <header id="header">
         <div class="container">
           <div class="header-content">
-            <div class="logo">
-              <h1>Cozy House</h1>
-              <p>Shelter for pets in Boston</p>
-            </div>
-            <div>
-              <img src="../assets/icons/Burger-m.svg" alt=""  class="burger">
-            <nav id="navBar">
-              <ul id="navBar-ul">
+            
+              <div class="logoAB">
+                <div class="logo">
+                  <h1>Cozy House</h1>
+                  <p>Shelter for pets in Boston</p>
+                </div>
+                <img src="../assets/icons/Burger-m.svg" alt=""  class="burger">
+                <div>
+              </div> 
+            </div>   
+            
+                             
+            <nav >              
+              <ul class="nav-ul">
                 <li>
-                  <a href="#about" class="active">About the shelter</a>
+                  <a  class="active">About the shelter</a>
                 </li>
                 <li><a href="../pets/index.html" class="page-link">Our pets</a></li>
                 <li><a href="#help" class="page-link">Help the shelter</a></li>
                 <li><a href="#contacts" class="page-link">Contacts</a></li>
               </ul>
             </nav>
-            </div>
             
+          
           </div>
         </div>
       </header>
+    </div>
       <main>
       <section class="not-only">
         <div class="container">
@@ -92,29 +100,63 @@
           <div class="pets-content">
             <h2>Our friends who <br>are looking for a house</h2>
             <div class="animals">
-              <button class="arrow remove320">
+              <button class="arrow remove320" id="left-btn">
                 <img src="../assets/icons/arrow-left.svg" alt="" />
               </button>
-                <div class="card first-card">
-                  <img src="../assets/images/pets-katrine.png" alt="" />
-                  <p>Katrine</p>
+              <div class="card-anim">
+              <div class="cards" id="cards">
+                <div class="card" id="first-card">
+                  <img src="" alt="" />
+                  <p></p>
                   <button  id="lm1">Learn more</button>
                 </div>
-                <div class="card remove320 middle-card">
-                  <img src="../assets/images/pets-jennifer.png" alt="" />
-                  <p>Jennifer</p>
+                <div class="card" id="middle-card">
+                  <img src="" alt="" />
+                  <p></p>
                   <button id="lm2">Learn more</button>
                 </div>
-                <div class="card remove768 last-card">
-                  <img src="../assets/images/pets-woody.png" alt="" />
-                  <p>Woody</p>
+                <div class="card" id="last-card">
+                  <img src="" alt="" />
+                  <p></p>
                   <button id="lm3">Learn more</button>
                 </div>
+                <div class="card" id="first-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button  id="lm1">Learn more</button>
+                </div>
+                <div class="card" id="middle-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button id="lm2">Learn more</button>
+                </div>
+                <div class="card" id="last-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button id="lm3">Learn more</button>
+                </div>
+                <div class="card" id="first-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button  id="lm1">Learn more</button>
+                </div>
+                <div class="card" id="middle-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button id="lm2">Learn more</button>
+                </div>
+                <div class="card" id="last-card">
+                  <img src="" alt="" />
+                  <p></p>
+                  <button id="lm3">Learn more</button>
+                </div>
+              </div>
+            </div>
                 <div class="arrow320">
-                  <button class="arrow appear320">
+                  <button class="arrow appear320" id="left-btn320">
                     <img src="../assets/icons/arrow-left.svg" alt="" />
                   </button>
-                <button class="arrow">
+                <button class="arrow" id="right-btn">
                   <img src="../assets/icons/arrow-right.svg" alt="" />
                 </button>
                 </div>
@@ -248,6 +290,27 @@
     </div>
     </footer>
   </div>
+  <div class="popup">
+    <div class="popup-body">
+      <div class="popup-main">
+      <button class="popup-close arrow" id="popup-close"><img src="../assets/icons/close.svg" alt="" class="popupX"></button>
+        <div class="popup-content">
+          <img id="modal-img" src="" alt="">
+          <div class="popup-text">
+            <h1></h1>
+            <h2></h2>
+            <p></p>
+            <ul>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
   <script src="app.js"></script>
   </body>
 </html>
