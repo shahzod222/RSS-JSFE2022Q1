@@ -8,6 +8,152 @@ body {
 h2 {
   letter-spacing: 0.06em;
 }
+@keyframes move-right {
+  from {
+    left: -990px;
+  }
+  to {
+    left: 0;
+  }
+}
+.transition-right {
+  animation-name: move-right;
+  animation-duration: 1.2s;
+}
+.transition-left {
+  animation-name: move-left;
+  animation-duration: 1.2s;
+}
+@keyframes move-left {
+  from {
+    left: -990px;
+  }
+  to {
+    left: -1980px;
+  }
+}
+
+.cards {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  left: -990px;
+}
+.card-anim {
+  overflow: hidden;
+}
+/* Popup */
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 41, 41, 0.6);
+  top: 0;
+  left: 0;
+  transition: 0.3s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+.popup-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.popup-main {
+  position: relative;
+  width: 952px;
+  height: 552px;
+}
+.popup-content:hover {
+  box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
+}
+.popup ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.popup ul li::before {
+  content: "\2022";
+  color: #f1cdb3;
+  display: inline-block;
+  width: 1em;
+}
+.popup-content {
+  display: flex;
+  transition: 0.2s ease;
+  background-color: #fafafa;
+  width: 900px;
+  height: 500px;
+  cursor: default;
+  margin: 52px 52px 0 0;
+  border-radius: 9px;
+  overflow: hidden;
+}
+#right-btn {
+  margin-left: 53px;
+}
+#left-btn {
+  margin-right: 53px;
+}
+.popup-text {
+  width: 351px;
+  height: 362px;
+  margin: 50px 20px 88px 29px;
+}
+.popup-text h1 {
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 35px;
+  line-height: 45px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text p {
+  margin: 40px 0;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 17px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text li {
+  font-family: "Georgia";
+  font-weight: 400;
+  line-height: 17px;
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-text li span {
+  font-weight: 700;
+}
+.popup-text h2 {
+  margin: 10px 0 0 0;
+  font-family: "Georgia";
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 23px;
+  letter-spacing: 0.06em;
+  color: #000000;
+}
+.popup-close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+}
+#middle-card {
+  margin: 0 90px;
+}
+#modal-img {
+  width: 500px;
+  height: 500px;
+}
+/* Popup */
 .start {
   background: radial-gradient(100% 215.42% at 0% 0%, #5b483a 0%, #262425 100%);
   width: 100%;
@@ -19,7 +165,7 @@ h2 {
 }
 
 .rotateBurger {
-  transition: 0.5s;
+  transition: 0.9s;
   transform: rotate(90deg);
 }
 .bg-start,
@@ -125,6 +271,7 @@ header {
   height: 60px;
   position: relative;
   right: 10px;
+  z-index: 1;
 }
 nav {
   position: relative;
@@ -245,6 +392,9 @@ main {
 /* Pets section */
 .card:hover {
   background-color: white;
+  cursor: pointer;
+  transform: scale(0.9);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .card:hover #lm1,
 .card:hover #lm2,
@@ -291,23 +441,15 @@ main {
   width: 100%;
   justify-content: center;
 }
-.cards {
-  display: flex;
-}
-.first-card {
-  margin: 0 90px 0 53px;
-}
-.last-card {
-  margin: 0 53px 0 90px;
-}
+
 .card {
   display: flex;
   flex-direction: column;
-  width: 270px;
-  height: 435px;
+  min-width: 270px;
+  min-height: 435px;
   background-color: #fafafa;
   align-items: center;
-  transition: 0.5s ease;
+  transition: 0.7s ease;
 }
 .card p {
   font-family: Georgia;
@@ -332,7 +474,7 @@ main {
   letter-spacing: 0.06em;
 }
 .arrow {
-  width: 52px;
+  min-width: 52px;
   height: 52px;
   border-radius: 100px;
   color: #292929;
@@ -565,6 +707,60 @@ footer a {
 }
 /* Responsive for 768<=screen<1280*/
 @media (max-width: 1279px) {
+  @keyframes move-left {
+    from {
+      left: -580px;
+    }
+    to {
+      left: -1160px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: -580px;
+    }
+    to {
+      left: 0;
+    }
+  }
+  #middle-card {
+    margin: 0 0 0 40px;
+  }
+  #right-btn {
+    margin-left: 12px;
+  }
+  #left-btn {
+    margin-right: 12px;
+  }
+  .cards {
+    left: -580px;
+  }
+  .popup-text {
+    width: 260px;
+    height: 303px;
+    margin: 10px 9px 37px 11px;
+  }
+  .popup-content {
+    width: 630px;
+    height: 350px;
+  }
+  .popup-text p {
+    margin: 20px 0;
+
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .popup-main {
+    width: 682px;
+    height: 402px;
+  }
+  #modal-img {
+    width: 350px;
+    height: 350px;
+  }
+  #last-card {
+    display: none;
+  }
   .remove768 {
     display: none;
   }
@@ -656,12 +852,7 @@ footer a {
   .pets-content h2 {
     margin-top: 80px;
   }
-  .first-card {
-    margin: 0 20px 0 12px;
-  }
-  .middle-card {
-    margin: 0 12px 0 20px;
-  }
+
   .animals {
     width: 100%;
     justify-content: center;
@@ -703,6 +894,7 @@ footer a {
   .don-text {
     margin: 80px 0 60px 0;
   }
+
   .don-text h2 {
     margin: 0;
     width: 300px;
@@ -783,20 +975,173 @@ footer a {
 }
 /* Responsive for 320<=screen<768*/
 @media (max-width: 767px) {
+  .transition-right {
+    animation-name: move-right;
+    animation-duration: 1.2s;
+  }
+  .transition-left {
+    animation-name: move-left;
+    animation-duration: 1.2s;
+  }
+  @keyframes move-left {
+    from {
+      left: 0;
+    }
+    to {
+      left: 300px;
+    }
+  }
+  @keyframes move-right {
+    from {
+      left: 0;
+    }
+    to {
+      left: -300px;
+    }
+  }
+  #middle-card {
+    margin: 0;
+  }
+  #right-btn {
+    margin-left: 12px;
+  }
+  #left-btn {
+    margin-right: 12px;
+  }
+  .popup-text {
+    width: 220px;
+    height: 321px;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    overflow-y: auto;
+  }
+  .popup-text ul {
+    margin-right: auto;
+  }
+  .popup-content {
+    width: 240px;
+    height: 341px;
+    margin: 52px 31px 0 0;
+  }
+  .popup-main .popup-close {
+    right: 1px;
+    margin: 0;
+  }
+  .popup-text p {
+    margin: 20px 0 24px 0;
+    font-size: 13px;
+    line-height: 14px;
+  }
+  .popup-main {
+    width: 271px;
+    height: 393px;
+  }
+  .card-anim {
+    max-width: 320px;
+    display: flex;
+    justify-content: center;
+  }
+  #modal-img {
+    display: none;
+  }
+  #middle-card {
+    display: none;
+  }
+  .cards {
+    left: 0;
+  }
   .content {
     max-width: 320px;
   }
   .container {
     width: 300px;
   }
+  nav ul {
+    display: none;
+  }
+  @keyframes move-rightB {
+    from {
+      right: -320px;
+    }
+    to {
+      right: 0;
+    }
+  }
+  @keyframes move-leftB {
+    from {
+      right: 0;
+    }
+    to {
+      right: -320px;
+    }
+  }
+  .transition-rightB {
+    animation-name: move-rightB;
+    animation-duration: 1.2s;
+  }
+  .transition-leftB {
+    animation-name: move-leftB;
+    animation-duration: 1.2s;
+  }
   .burger {
     display: block;
     position: relative;
-    right: 2px;
+    z-index: 10;
+    margin: 0 0 0 43px;
   }
-  nav {
-    display: none;
+  #first-card {
+    margin: 0 25px;
   }
+  .bgB-open {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
+    background-color: rgba(41, 41, 41, 0.6);
+    height: 100%;
+  }
+  .openBurger {
+    position: fixed;
+    z-index: 11;
+    top: 0;
+    right: -320px;
+    width: 320px;
+    height: 100%;
+    background-color: #292929;
+    padding: 0;
+  }
+  .page-link,
+  .active {
+    font-size: 32px;
+    line-height: 51px;
+  }
+  .active {
+    margin-bottom: 3px;
+  }
+  nav ul li {
+    text-align: center;
+    margin: 40px 0 0 0;
+  }
+  nav ul li a {
+    margin: 0;
+  }
+  .logoAB {
+    display: flex;
+  }
+  .addM {
+    margin: 30px 0 108px 10px;
+  }
+  .navBarUl {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
   .not-only img {
     width: 260px;
     height: 271.77px;
@@ -807,7 +1152,10 @@ footer a {
     padding-top: 30px;
   }
   .header-content {
-    width: 258.7px;
+    width: auto;
+    max-height: none;
+    display: flex;
+    flex-direction: column;
   }
   .header-content button {
     width: 30px;
@@ -816,6 +1164,7 @@ footer a {
   .not-only {
     margin: 60px 10px 0 10px;
   }
+
   .not-only-text {
     display: flex;
     flex-direction: column;
@@ -920,7 +1269,7 @@ footer a {
   .pets-btn {
     margin-bottom: 42px;
   }
-  .first-card {
+  #first-card {
     margin: 0 15px;
   }
   .help {
@@ -1064,6 +1413,10 @@ footer a {
   }
   .contacts:last-child p {
     width: 234px;
+  }
+  .card {
+    position: relative;
+    z-index: 0;
   }
   .footer-img {
     width: 260px;

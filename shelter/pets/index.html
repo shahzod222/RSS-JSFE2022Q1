@@ -14,35 +14,40 @@
   </head>
   <body>
     <div class="wrapper">
-      <header>
-        <div class="container">
-          <div class="header-content">
-            <a class="logo" href="../main/index.html">
-              <h1>Cozy House</h1>
-              <p>Shelter for pets in Boston</p>
-            </a>
-            <img src="../assets/icons/Burger-p.svg" alt="" class="burger" />
-            <nav>
-              <ul>
-                <li>
-                  <a href="../main/index.html#about" class="page-link"
-                    >About the shelter</a
-                  >
-                </li>
-                <li>
-                  <a href="#pets" class="underlined">Our pets</a>
-                </li>
-                <li>
-                  <a href="../main/index.html#help" class="page-link"
-                    >Help the shelter</a
-                  >
-                </li>
-                <li><a href="#contacts" class="page-link">Contacts</a></li>
-              </ul>
-            </nav>
+      <div class="bgB" id="bgB">
+        <header id="header">
+          <div class="container">
+            <div class="header-content">
+              <div class="logoAB">
+                <a class="logo" href="../main/index.html">
+                  <h1>Cozy House</h1>
+                  <p>Shelter for pets in Boston</p>
+                </a>
+                <img src="../assets/icons/Burger-p.svg" alt="" class="burger" />
+              </div>
+
+              <nav>
+                <ul class="nav-ul">
+                  <li>
+                    <a href="../main/index.html" class="page-link"
+                      >About the shelter</a
+                    >
+                  </li>
+                  <li>
+                    <a class="underlined">Our pets</a>
+                  </li>
+                  <li>
+                    <a href="../main/index.html#help" class="page-link"
+                      >Help the shelter</a
+                    >
+                  </li>
+                  <li><a href="#contacts" class="page-link">Contacts</a></li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </div>
-      </header>
+        </header>
+      </div>
       <main>
         <div class="pets-content" id="pets">
           <h2 id="pets">
@@ -51,60 +56,52 @@
           </h2>
           <div class="cards">
             <div class="card">
-              <img src="../assets/images/pets-katrine.png" alt="" />
-              <p>Katrine</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm1">Learn more</button>
             </div>
             <div class="card">
-              <img src="../assets/images/pets-jennifer.png" alt="" />
-              <p>Jennifer</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm2">Learn more</button>
             </div>
             <div class="card">
-              <img src="../assets/images/pets-woody.png" alt="" />
-              <p>Woody</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm3">Learn more</button>
             </div>
             <div class="card remove320">
-              <img src="../assets/images/pets-sophia.png" alt="" />
-              <p>Sophia</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm4">Learn more</button>
             </div>
             <div class="card bottom-card remove320">
-              <img src="../assets/images/pets-timmy.png" alt="" />
-              <p>Timmy</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm5">Learn more</button>
             </div>
             <div class="card bottom-card remove320">
-              <img src="../assets/images/pets-charly.png" alt="" />
-              <p>Charly</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm6">Learn more</button>
             </div>
             <div class="card bottom-card remove768">
-              <img src="../assets/images/pets-scarlet.png" alt="" />
-              <p>Scarlett</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm7">Learn more</button>
             </div>
             <div class="card bottom-card remove768">
-              <img src="../assets/images/pets-freddie.png" alt="" />
-              <p>Freddie</p>
+              <img src="" alt="" />
+              <p></p>
               <button id="lm8">Learn more</button>
             </div>
           </div>
           <div class="buttons">
-            <button class="pag-btn disabled pb1" disabled>
-              <img src="../assets/icons/double-right.svg" alt="" />
-            </button>
-            <button class="pag-btn disabled pb2" disabled>
-              <img src="../assets/icons/right.svg" alt="" />
-            </button>
-            <button class="pag-btn-n pb3">1</button>
-            <button class="pag-btn pb4">
-              <img src="../assets/icons/left.svg" alt="" />
-            </button>
-            <button class="pag-btn pb5">
-              <img src="../assets/icons/double-left.svg" alt="" />
-            </button>
+            <button class="pag-btn disabled pb1" id="maxLeft"><<</button>
+            <button class="pag-btn disabled pb2" id="left"><</button>
+            <button class="pag-btn-n pb3" id="pagNumber">1</button>
+            <button class="pag-btn pb4" id="right">></button>
+            <button class="pag-btn pb5" id="maxRight">>></button>
           </div>
         </div>
       </main>
@@ -167,5 +164,29 @@
         </div>
       </footer>
     </div>
+    <div class="popup">
+      <div class="popup-body">
+        <div class="popup-main">
+          <button class="popup-close arrow" id="popup-close">
+            <img src="../assets/icons/close.svg" alt="" class="popupX" />
+          </button>
+          <div class="popup-content">
+            <img id="modal-img" src="" alt="" />
+            <div class="popup-text">
+              <h1></h1>
+              <h2></h2>
+              <p></p>
+              <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="app.js"></script>
   </body>
 </html>
