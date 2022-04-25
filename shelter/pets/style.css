@@ -269,7 +269,7 @@ main {
 .card:hover {
   background-color: white;
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(0.9);
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 .card:hover #lm1,

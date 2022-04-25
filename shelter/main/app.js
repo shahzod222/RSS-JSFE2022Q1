@@ -228,20 +228,19 @@ allCards[5].addEventListener("click", () => {
 });
 function popup(n) {
   let d = allCards[n].childNodes[1].id;
-  document.querySelector(".popup").addEventListener("mousemove", (e) => {
-    document.querySelector(".popup-main").addEventListener("click", () => {
-      if (e.target.className == "popup-main") {
-        closePopup();
-      }
-    });
-    document.querySelector(".popup-body").addEventListener("click", () => {
-      if (e.target.className == "popup-body") {
-        closePopup();
-      }
-    });
-
+  document.querySelector(".popup").addEventListener("click", (e) => {
     if (
-      e.target.className !== "popup-body" &&
+      e.target.classList.value == "popup-main" ||
+      e.target.classList.value == "popup-body" ||
+      e.target.classList.value == "popup-close arrow" ||
+      e.target.classList.value == "popupX"
+    ) {
+      closePopup();
+    }
+  });
+  document.querySelector(".popup").addEventListener("mousemove", (e) => {
+    if (
+      e.target.classList.value !== "popup-body" &&
       e.target.classList.value !== "popup-main" &&
       e.target.classList.value !== "popup-close arrow" &&
       e.target.classList.value !== "popupX"
@@ -298,7 +297,6 @@ document.getElementById("bgB").addEventListener("click", (e) => {
 function closeBur() {
   burger.classList.toggle("rotateBurger");
   document.body.style.overflowY = "visible";
-  document.querySelector(".container").style.width = "300px";
   setTimeout(() => {
     document.getElementById("header").classList.add("transition-leftB");
   }, 400);
@@ -313,7 +311,6 @@ function closeBur() {
 function openBur() {
   burger.classList.toggle("rotateBurger");
   document.body.style.overflowY = "hidden";
-  document.querySelector(".container").style.width = "320px";
   setTimeout(() => {
     document.getElementById("header").classList.add("transition-rightB");
     document.getElementById("header").classList.add("openBurger");
