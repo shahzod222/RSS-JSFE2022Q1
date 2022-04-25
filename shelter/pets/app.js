@@ -242,20 +242,19 @@ function popup(n) {
   document.querySelector(".popup").style.opacity = "1";
   document.querySelector(".popup").style.visibility = "visible";
   document.body.style.overflowY = "hidden";
-  document.querySelector(".popup").addEventListener("mousemove", (e) => {
-    document.querySelector(".popup-main").addEventListener("click", () => {
-      if (e.target.className == "popup-main") {
-        closePopup();
-      }
-    });
-    document.querySelector(".popup-body").addEventListener("click", () => {
-      if (e.target.className == "popup-body") {
-        closePopup();
-      }
-    });
-
+  document.querySelector(".popup").addEventListener("click", (e) => {
     if (
-      e.target.className !== "popup-body" &&
+      e.target.classList.value == "popup-main" ||
+      e.target.classList.value == "popup-body" ||
+      e.target.classList.value == "popup-close arrow" ||
+      e.target.classList.value == "popupX"
+    ) {
+      closePopup();
+    }
+  });
+  document.querySelector(".popup").addEventListener("mousemove", (e) => {
+    if (
+      e.target.classList.value !== "popup-body" &&
       e.target.classList.value !== "popup-main" &&
       e.target.classList.value !== "popup-close arrow" &&
       e.target.classList.value !== "popupX"
@@ -267,9 +266,6 @@ function popup(n) {
       document.getElementById("popup-close").style.border = "2px solid #fddcc4";
       document.getElementById("popup-close").style.backgroundColor = "#fddcc4";
     }
-  });
-  document.getElementById("popup-close").addEventListener("click", (e) => {
-    closePopup();
   });
 }
 function closePopup() {
