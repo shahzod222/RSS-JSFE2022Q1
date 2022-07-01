@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
 .news__item {
     display: flex;
     flex-direction: column;
@@ -57,6 +58,7 @@
     background: #fff;
     position: relative;
     z-index: 1;
+    font-family: 'Merriweather', serif;
 }
 
 .news__item .news__description h2 {
