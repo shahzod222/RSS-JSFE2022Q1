@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Ubuntu:wght@700&display=swap');
 body {
     color: #fff;
     background: #17181c;
@@ -12,19 +12,21 @@ header {
 header h1 {
     font-size: 40px;
     font-family: 'Ubuntu', sans-serif;
-    color:#EDF1FF
+    color: #edf1ff;
 }
 
 footer {
-    height: 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 footer .copyright {
-    font-size: 14px;
+    font-size: 20px;
     color: #333;
     text-align: center;
+    font-family: 'Inter', sans-serif;
 }
 footer .copyright a {
     color: #444;
@@ -34,4 +36,25 @@ footer .copyright a:hover {
 }
 footer .copyright:before {
     content: '©';
+}
+footer .github-icon {
+    width: 65px;
+    height: 65px;
+    transform: scale(0.9);
+    transition: 0.3s ease;
+}
+footer .rs-icon {
+    width: 200px;
+    height: 55px;
+    transform: scale(0.9);
+    transition: 0.3s ease;
+}
+@media (max-width:520px) {
+    footer{
+        justify-content: center;
+    }
+}
+.rs-icon:hover,
+.github-icon:hover {
+    transform: scale(1.1);
 }
