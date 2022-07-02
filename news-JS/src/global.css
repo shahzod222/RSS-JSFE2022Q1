@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&family=Ubuntu:wght@700&display=swap');
+html,
 body {
     color: #fff;
-    background: #17181c;
+    background: #edf1ff;
     font-family: sans-serif;
+    height: 100%;
+    margin: 0;
+    padding: 0;
 }
-
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
 header {
     padding: 10px 30px;
 }
@@ -12,14 +20,20 @@ header {
 header h1 {
     font-size: 40px;
     font-family: 'Ubuntu', sans-serif;
-    color: #edf1ff;
+    color: #282d3c;
 }
-
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
+}
 footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
+    padding: 5px 5px 0 5px;
     flex-wrap: wrap;
 }
 footer .copyright {
@@ -42,16 +56,23 @@ footer .github-icon {
     height: 65px;
     transform: scale(0.9);
     transition: 0.3s ease;
+    margin-left: 10px;
 }
 footer .rs-icon {
-    width: 200px;
+    width: 180px;
     height: 55px;
+    margin-right: 10px;
     transform: scale(0.9);
     transition: 0.3s ease;
 }
-@media (max-width:520px) {
-    footer{
-        justify-content: center;
+@media (max-width: 767px) {
+    footer {
+        flex-direction: column;
+    }
+    footer .rs-icon,
+    footer .github-icon {
+        margin-left: 0px;
+        margin-right: 0px;
     }
 }
 .rs-icon:hover,
