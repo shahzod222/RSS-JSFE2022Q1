@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/ban-types */
+import { articleType, noNull } from '../../types/types';
 import './news.css';
-import { articleType } from '../appView';
-type noNull = NonNullable<HTMLElement>;
+
 class News {
     draw(data: articleType[]) {
         const news = data.length >= 10 ? data.filter((_item: Object, idx: number) => idx < 10) : data;

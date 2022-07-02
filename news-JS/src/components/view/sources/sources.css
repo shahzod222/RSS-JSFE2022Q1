@@ -1,33 +1,33 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@700&family=Rubik&display=swap');
 
 .sources {
-    margin: 30px 0;
-    display: flex;
-    flex-wrap: nowrap;
     max-width: 95%;
     height:150px;
-    overflow: auto;
+    display: flex;
+    flex-wrap: nowrap;
     align-items: center;
+    margin: 30px 0;
+    overflow: auto;
     font: 1.3em 'Lato', sans-serif;
 }
 
 .source__item {
+    color: #0072b5;
     background: none;
     border: 2px solid #34568b;
+    border-radius: 22px;
     font: inherit;
     line-height: 1;
     margin: 0.5em;
     padding: 1em 2em;
-    color: #0072b5;
     transition: 0.25s;
     cursor: pointer;
-    border-radius: 22px;
 }
 
 .source__item:hover,
 .source__item:focus {
-    border-color: #009B77;
     color: #88B04B;
+    border-color: #009B77;
     box-shadow: 0 0.5em 0.5em -0.4em #88B04B;
     transform: translateY(-0.25em);
 }
@@ -36,29 +36,32 @@
     font-weight: 400;
     white-space: nowrap;
 }
+
 .alph-btns {
-    justify-content: center;
-    align-items: center;
     max-width: 280px;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
+
 .letter {
     width: 30px;
     height: 30px;
-    border: none;
-    outline: none;
     font-family: 'Rubik', sans-serif;
     font-size: 15px;
-    margin: 5px;
-    cursor: pointer;
     background: #a0daa9;
     color: #282d3c;
+    margin: 5px;
+    cursor: pointer;
     border-radius: 5px;
+    border: none;
+    outline: none;
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
         rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     transition: 0.4s ease;
 }
+
 .letter:hover {
     box-shadow: none;
 }
