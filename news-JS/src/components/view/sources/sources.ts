@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-inferrable-types */
+import { sourceType } from '../../types/types';
 import './sources.css';
-import { sourceType } from '../appView';
+
 class Sources {
     draw(data: sourceType[]) {
         const fragment: DocumentFragment = document.createDocumentFragment();

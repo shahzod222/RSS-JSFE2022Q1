@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-import { DataType } from '../view/appView';
-
 /* eslint-disable @typescript-eslint/ban-types */
+import { DataType } from "../types/types";
+
 class Loader {
     baseLink: string;
     options: Object;
@@ -43,8 +43,8 @@ class Loader {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
-            .then((data: Object) => callback(data))
-            .catch((err: string) => console.error(err));
+            .then((data: JSON) => callback(data))
+            .catch((err: Error) => console.error(err));
     }
 }
 

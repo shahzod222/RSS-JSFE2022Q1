@@ -1,6 +1,7 @@
 import AppController from '../controller/controller';
+import { DataType } from '../types/types';
 import { AppView } from '../view/appView';
-import { DataType } from '../view/appView';
+
 class App {
     controller: AppController;
     view: AppView;
