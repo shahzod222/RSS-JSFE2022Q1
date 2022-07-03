@@ -1,4 +1,4 @@
-import { URLs } from '../types/types';
+import { URLs } from '../helper/interfaces';
 import Loader from './loader';
 
 class AppLoader extends Loader {

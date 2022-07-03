@@ -1,6 +1,6 @@
-import { DataType } from '../types/types';
+import { DataType } from '../helper/types';
 import News from './news/news';
-import { showByAlph } from './sources/sources';
+import { showByAlph } from '../helper/functions';
 
 export class AppView {
     news: News;
