@@ -1,11 +1,10 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable @typescript-eslint/ban-types */
-import { DataType } from "../types/types";
+import { IOptions } from '../helper/interfaces';
+import { DataType } from '../helper/types';
 
 class Loader {
     baseLink: string;
-    options: Object;
-    constructor(baseLink: string, options: Object) {
+    options: IOptions;
+    constructor(baseLink: string, options: IOptions) {
         this.baseLink = baseLink;
         this.options = options;
     }
@@ -13,7 +12,7 @@ class Loader {
     getResp(
         { endpoint = '', options = {} },
         callback = (data: DataType) => {
-            console.error('No callback for GET response');
+            console.error('No callback for GET response', data);
         }
     ) {
         this.load('GET', endpoint, callback, options);
@@ -29,8 +28,8 @@ class Loader {
         return res;
     }
 
-    makeUrl(options: Object, endpoint: string): string {
-        const urlOptions: Object = { ...this.options, ...options };
+    makeUrl(options: IOptions, endpoint: string): string {
+        const urlOptions: IOptions = { ...this.options, ...options };
         let url = `${this.baseLink}${endpoint}?` as string;
         let key: keyof typeof urlOptions;
         for (key in urlOptions) {
@@ -39,11 +38,11 @@ class Loader {
         return url.replace('&', '');
     }
 
-    load(method: string, endpoint: string, callback: Function, options: Object = {}) {
+    load(method: string, endpoint: string, callback: { (data: DataType): void }, options: IOptions) {
         fetch(this.makeUrl(options, endpoint), { method })
             .then(this.errorHandler)
             .then((res: Response) => res.json())
-            .then((data: JSON) => callback(data))
+            .then((data: DataType) => callback(data))
             .catch((err: Error) => console.error(err));
     }
 }

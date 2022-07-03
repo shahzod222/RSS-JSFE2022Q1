@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { DataType } from '../types/types';
+import { DataType } from '../helper/types';
 import AppLoader from './appLoader';
 
 class AppController extends AppLoader {

@@ -1,10 +1,10 @@
-/* eslint-disable @typescript-eslint/ban-types */
-import { articleType, noNull, URLs } from '../../types/types';
+import { URLs } from '../../helper/interfaces';
+import { articleType, noNull} from '../../helper/types';
 import './news.css';
 
 class News {
     draw(data: articleType[]) {
-        const news = data.length >= 10 ? data.filter((_item: Object, idx: number) => idx < 10) : data;
+        const news = data.length >= 10 ? data.filter((_item: articleType, idx: number) => idx < 10) : data;
 
         const fragment: DocumentFragment = document.createDocumentFragment();
         const newsItemTemp = document.querySelector('#newsItemTemp') as HTMLTemplateElement;
