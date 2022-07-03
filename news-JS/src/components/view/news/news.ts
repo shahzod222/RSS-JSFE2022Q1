@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-types */
-import { articleType, noNull } from '../../types/types';
+import { articleType, noNull, URLs } from '../../types/types';
 import './news.css';
 
 class News {
@@ -20,10 +20,7 @@ class News {
             const newsDescContent = newsClone.querySelector('.news__description-content') as noNull;
             const newsRM = newsClone.querySelector('.news__read-more a') as noNull;
             if (idx % 2) newsItem.classList.add('alt');
-            newsMetsPhoto.style.backgroundImage = `url(${
-                item.urlToImage ||
-                'https://media.istockphoto.com/vectors/abstract-globe-background-vector-id1311148884?k=20&m=1311148884&s=612x612&w=0&h=2zFGLiw0VmQbh_CFQgbTzaaamRygqILdq1T8QuglBSQ='
-            })`;
+            newsMetsPhoto.style.backgroundImage = `url(${item.urlToImage || URLs.urlToAltImg})`;
             newsMetaAuthor.textContent = item.author || item.source.name;
             newsMetaDate.textContent = item.publishedAt.slice(0, 10).split('-').reverse().join('-');
 
