@@ -14,7 +14,7 @@ export function sortArray(array: sourceType[], letter: string): sourceType[] {
 export function showByAlph(sources: sourceType[]) {
     const alphBlock = document.querySelector('.alph-btns') as HTMLDivElement;
     const buttonsBlock = document.querySelector('.buttons') as HTMLDivElement;
-    const alph = 'ABCDEFGHILMNPRSTUVWXY' as string
+    const alph = 'ABCDEFGHILMNPRSTUVWXY' as string;
     const drawClass = new Sources();
 
     alphBlock.innerHTML = '';
@@ -24,12 +24,16 @@ export function showByAlph(sources: sourceType[]) {
         letter.innerHTML = alph[i];
         letter.className = 'letter';
     }
-    
-    const allLetters = document.querySelectorAll('.letter') as NodeListOf<Element>;
+
+    const allLetters = document.querySelectorAll('.letter') as NodeListOf<HTMLButtonElement>;
     allLetters.forEach((e) => {
         e.addEventListener('click', () => {
+            allLetters.forEach((el) => {
+                el.classList.remove('activeLetter');
+            });
             buttonsBlock.innerHTML = '';
             drawClass.draw(sortArray(sources, e.innerHTML));
+            e.classList.add('activeLetter');
         });
     });
 }
