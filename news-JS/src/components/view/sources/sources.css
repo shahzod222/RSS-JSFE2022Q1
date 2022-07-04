@@ -11,6 +11,20 @@
     font: 1.3em 'Lato', sans-serif;
 }
 
+.sources::-webkit-scrollbar {
+    width: 5px;
+}
+
+.sources::-webkit-scrollbar-track {
+    border: 0.5px solid #939597;
+    border-radius: 5px;
+}
+
+.sources::-webkit-scrollbar-thumb {
+    background: #ccd7ff;
+    border-radius: 5px;
+}
+
 .source__item {
     color: #0072b5;
     background: none;

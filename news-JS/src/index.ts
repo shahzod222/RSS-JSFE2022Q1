@@ -2,4 +2,6 @@ import App from './components/app/app';
 import './global.css';
 
 const app = new App();
-app.start();
+document.body.onload = function () {
+    app.start();
+};
