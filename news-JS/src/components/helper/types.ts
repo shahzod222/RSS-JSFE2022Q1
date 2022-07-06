@@ -2,6 +2,7 @@ export type DataType = {
     articles: articleType[];
     sources: sourceType[];
 };
+
 export type articleType = {
     author: string;
     publishedAt: string;
@@ -11,8 +12,14 @@ export type articleType = {
     description: string;
     urlToImage: string;
 };
+
 export type sourceType = {
     id: string;
     name: string;
 };
-export type noNull = NonNullable<HTMLElement>;
+
+export type noNullDiv = NonNullable<HTMLDivElement>;
+export type noNullLi = NonNullable<HTMLLIElement>;
+export type noNullHeading = NonNullable<HTMLHeadingElement>;
+export type noNullP = NonNullable<HTMLParagraphElement>;
+export type noNullA = NonNullable<HTMLAnchorElement>;
