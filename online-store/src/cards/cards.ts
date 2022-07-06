@@ -56,18 +56,40 @@ export function showCards() {
         cardQuantity.innerHTML = `Quantity In Stock: ${allCars[i].quantityInStock}`;
         cardColor.innerHTML = `Color: ${allCars[i].color}`;
         cardType.innerHTML = `Type: ${allCars[i].type}`;
-        addToCart.innerHTML = 'Add To Card';
+        addToCart.innerHTML = 'Add To Cart';
 
-        let cartCout = document.querySelector('.cart-count') as HTMLParagraphElement;
+        let cartCount = document.querySelector('.cart-count') as HTMLParagraphElement;
+
+        if (localStorage.cart) {
+            if (localStorage.cart.includes(allCars[i].cssClass)) {
+                addToCart.className = 'add-to-cart active-btn';
+                addingToCart(addToCart, cartCount);
+            }
+        }
+
         addToCart.addEventListener('click', () => {
             addToCart.classList.toggle('active-btn');
             if (addToCart.className == 'add-to-cart active-btn') {
-                cartCout.innerHTML = `${Number(cartCout.innerHTML) + 1}`;
-                addToCart.innerHTML = 'Added To Cart'
+                addingToCart(addToCart, cartCount);
+                if (!localStorage.cart) {
+                    localStorage.setItem('cart', allCars[i].cssClass);
+                } else {
+                    localStorage.cart += ` ${allCars[i].cssClass}`;
+                }
             } else {
-                cartCout.innerHTML = `${Number(cartCout.innerHTML) - 1}`;
-                addToCart.innerHTML = 'Add To Cart'
+                removingFromCart(addToCart, cartCount);
+                if (localStorage.cart) {
+                    localStorage.cart = localStorage.cart.replace(allCars[i].cssClass, '');
+                }
             }
         });
     }
+}
+function addingToCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+    countEl.innerHTML = `${Number(countEl.innerHTML) + 1}`;
+    el.innerHTML = 'Added To Cart';
+}
+function removingFromCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+    countEl.innerHTML = `${Number(countEl.innerHTML) - 1}`;
+    el.innerHTML = 'Add To Cart';
 }
