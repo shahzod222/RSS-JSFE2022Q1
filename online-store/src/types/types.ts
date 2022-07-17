@@ -1,17 +1,18 @@
-interface ICar {
+export interface ICar {
     model: string;
     price: string;
-    releaseYear: number;
+    popularity: string;
     quantityInStock: number;
     cssClass: string;
     color: string;
     type: string;
 }
+
 export class Car implements ICar {
     model: string;
     brand: string;
     price: string;
-    releaseYear: number;
+    popularity: string;
     quantityInStock: number;
     cssClass: string;
     color: string;
@@ -19,7 +20,7 @@ export class Car implements ICar {
     constructor(
         model: string,
         price: string,
-        releaseYear: number,
+        popularity: string,
         quantityInStock: number,
         cssClass: string,
         color: string,
@@ -28,10 +29,21 @@ export class Car implements ICar {
         this.model = model;
         this.brand = 'BMW';
         this.price = price;
-        this.releaseYear = releaseYear;
+        this.popularity = popularity;
         this.quantityInStock = quantityInStock;
         this.cssClass = cssClass;
         this.color = color;
         this.type = type;
+    }
+}
+
+export class Cart {
+    putToCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+        countEl.innerHTML = `${Number(countEl.innerHTML) + 1}`;
+        el.innerHTML = 'Added To Cart';
+    }
+    removeFromCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+        countEl.innerHTML = `${Number(countEl.innerHTML) - 1}`;
+        el.innerHTML = 'Add To Cart';
     }
 }

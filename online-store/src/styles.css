@@ -40,12 +40,18 @@ header .cart-count {
 header h2 {
     font-size: 40px;
     font-family: 'Ubuntu', sans-serif;
+    margin: 0;
 }
 
 .wrapper {
     min-height: 100%;
     display: flex;
     flex-direction: column;
+}
+
+.filters {
+    margin: 70px 0 20px 0;
+    padding: 5px;
 }
 
 main {
