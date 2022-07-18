@@ -23,7 +23,6 @@
 .card-img {
     width: 100%;
     min-height: 220px;
-    background-size: 100% 100%;
 }
 
 .card-desc {
@@ -70,24 +69,15 @@
     border: none;
     border-radius: 20px;
     outline: none;
-    color: #EDF1FF;
-    background-color: #0072B5;
+    color: #edf1ff;
+    background-color: #0072b5;
     font-size: 15px;
     font-family: 'Cabin', sans-serif;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-    margin: 10px 0 3px 0 ;
+    margin: 10px 0 3px 0;
     cursor: pointer;
 }
 
 .active-btn {
     background-color: #88b04b;
-}
-
-@media (max-width: 1320px) {
-    .card {
-        width: 330px;
-    }
-    .card-img {
-        height: 180px;
-    }
 }
