@@ -24,7 +24,6 @@
             <main>
                 <div class="filters">
                     <div class="filters-by-value">
-                        <h2>Filters By Value</h2>
                         <div class="type-filters">
                             <h3>Type:</h3>
                             <label for="suv-type">&nbsp;SUV</label>
@@ -81,14 +80,12 @@
                                 id="popular-btn"
                             />
                         </div>
-                    </div>
-                    <div class="sort-filters">
-                        <div class="search-block">
-                            <h2>Search</h2>
+                        <div class="search-filter">
+                            <h3>Search:</h3>
                             <input type="text" placeholder="Enter the name" class="search" />
                         </div>
-                        <div class="sort-block">
-                            <h2>Sort</h2>
+                        <div class="sort-filter">
+                            <h3>Sort:</h3>
                             <select class="sort">
                                 <option value="sortNameAZ">Sort by Name, A to Z</option>
                                 <option value="sortNameZA">Sort by Name, Z to A</option>
@@ -99,17 +96,21 @@
                             </select>
                         </div>
                     </div>
+
                     <div class="range-filters">
-                        <h2>Range Filters</h2>
                         <div class="quantity-filters">
-                            <h3>Quantity In Stock</h3>
+                            <h3>Quantity:</h3>
                             &nbsp;
                             <div id="quantity-slider"></div>
                         </div>
                         <div class="price-filters">
-                            <h3>Price</h3>
+                            <h3>Car Price:</h3>
                             &nbsp;
                             <div id="price-slider"></div>
+                        </div>
+                        <div class="reset-buttons">
+                            <button class="reset-btn reset-filters">Reset Filters</button>
+                            <button class="reset-btn reset-page">Reset Settings</button>
                         </div>
                     </div>
                 </div>

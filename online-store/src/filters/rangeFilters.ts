@@ -15,6 +15,12 @@ noUiSlider.create(quantitySlider, {
     range: {
         min: 1,
         max: 5,
+    }, 
+    pips: {
+        mode: 'positions',
+        stepped: true,
+        values: [0, 25, 50, 75, 100],
+        density: 3,
     },
 });
 

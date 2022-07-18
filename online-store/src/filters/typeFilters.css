@@ -1,46 +1,48 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
 .filters-by-value,
-.sort-filters,
 .range-filters {
     width: 440px;
     height: 300px;
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     font-family: 'Roboto Slab', serif;
     font-size: 20px;
     padding: 5px;
     background-color: #d9eee1;
 }
 
-.range-filters {
-    margin: 0 10px 0 0;
-}
-
-.filters-by-value h2,
-.sort-filters h2,
-.range-filters h2 {
-    font-size: 25px;
-    font-family: 'Ubuntu', sans-serif;
-    margin: 10px 0;
-    text-align: center;
-}
-
-.filters-by-value h3,
-.sort-filters h3,
-.range-filters h3 {
+.filters h3{
     margin: 0 10px 0 0;
     font-weight: 400;
 }
 
 .range-filters h3 {
-    margin: 0 0 20px 0;
+    margin: 0 30px 0 0;
 }
 
 .popularity-filter,
-.type-filters {
+.type-filters,
+.sort-filter,
+.search-filter,
+.color-filters,
+.quantity-filters,
+.price-filters{
     display: flex;
     align-items: center;
+}
+
+.sort{
+    width: 220px;
+    height: 30px;
+    text-align: center;
+    font-size: 16px;
+    background: #98B4D4;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    font-family: 'Roboto Slab', serif;
 }
 
 .styled-checkbox {
@@ -79,12 +81,6 @@
     cursor: pointer;
 }
 
-.color-filters {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-}
-
 .c-red,
 .c-red:checked {
     background-color: #dd4124;
@@ -110,20 +106,25 @@
     background-color: #939597;
 }
 
-.quantity-filters,
-.price-filters {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.quantity-filters {
-    margin-bottom: 10px;
-}
-
 #quantity-slider,
 #price-slider {
     width: 250px;
     font-size: 20px;
+}
+
+.reset-btn{
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: #88B04B;
+}
+
+.reset-buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
