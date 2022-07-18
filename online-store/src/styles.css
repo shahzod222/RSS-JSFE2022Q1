@@ -79,17 +79,6 @@ footer p {
     font-family: 'Ubuntu', sans-serif;
 }
 
-@media (max-width: 767px) {
-    footer {
-        flex-direction: column;
-    }
-    footer .rs-icon,
-    footer .github-icon {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-}
-
 .rs-icon:hover,
 .github-icon:hover {
     transform: scale(1.1);

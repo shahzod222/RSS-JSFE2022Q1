@@ -1,12 +1,14 @@
-import { Car, Cart } from '../types/types';
+import { Car } from '../types/types';
 import './cards.css';
+import { cart } from './cart';
 
- let cardsBlock = document.querySelector('.cards-block') as HTMLDivElement;
+let cardsBlock = document.querySelector('.cards-block') as HTMLDivElement;
+if (!localStorage.cart) localStorage.setItem('cart', '');
 
 export function showCards(array: Car[]) {
-    cardsBlock.innerHTML = ''
-    if(array.length == 0){
-        cardsBlock.innerHTML = 'Items not found'
+    cardsBlock.innerHTML = '';
+    if (array.length == 0) {
+        cardsBlock.innerHTML = '<h1 class="no-items">Items not found</h1>';
     }
     for (let i = 0; i < array.length; i++) {
         let card = document.createElement('div') as HTMLDivElement;
@@ -23,7 +25,6 @@ export function showCards(array: Car[]) {
         let cardQuantity = document.createElement('li') as HTMLLIElement;
         let cardPrice = document.createElement('li') as HTMLLIElement;
         let cardType = document.createElement('li') as HTMLLIElement;
-
         let addToCart = document.createElement('button') as HTMLButtonElement;
 
         cardImg.className = `card-img ${array[i].cssClass}`;
@@ -38,7 +39,10 @@ export function showCards(array: Car[]) {
         cardColor.className = 'card-list-item card-color';
         cardQuantity.className = 'card-list-item card-quantity';
         cardType.className = 'card-list-item card-type';
-        addToCart.className = 'add-to-cart';
+        !localStorage.cart.includes(array[i].cssClass)
+            ? (addToCart.className = 'add-to-cart')
+            : (addToCart.className = 'add-to-cart active-btn');
+        addToCart.name = array[i].cssClass;
 
         cardsBlock.append(card);
         card.append(cardImg);
@@ -62,32 +66,6 @@ export function showCards(array: Car[]) {
         cardColor.innerHTML = `Color: ${array[i].color}`;
         cardType.innerHTML = `Type: ${array[i].type}`;
         addToCart.innerHTML = 'Add To Cart';
-
-        let cartCount = document.querySelector('.cart-count') as HTMLParagraphElement;
-        let cart = new Cart();
-
-        if (localStorage.cart) {
-            if (localStorage.cart.includes(array[i].cssClass)) {
-                addToCart.className = 'add-to-cart active-btn';
-                cart.putToCart(addToCart, cartCount);
-            }
-        }
-
-        addToCart.addEventListener('click', () => {
-            addToCart.classList.toggle('active-btn');
-            if (addToCart.className == 'add-to-cart active-btn') {
-                cart.putToCart(addToCart, cartCount);
-                if (!localStorage.cart) {
-                    localStorage.setItem('cart', `${array[i].cssClass}`);
-                } else {
-                    localStorage.cart += ` ${array[i].cssClass}`;
-                }
-            } else {
-                cart.removeFromCart(addToCart, cartCount);
-                if (localStorage.cart) {
-                    localStorage.cart = localStorage.cart.replace(array[i].cssClass, '');
-                }
-            }
-        });
+        cart(addToCart);
     }
 }

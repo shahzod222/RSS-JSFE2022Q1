@@ -1,25 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&family=Ubuntu:wght@700&display=swap');
 
 .filters-by-value,
 .range-filters {
-    width: 440px;
+    width: 380px;
     height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-family: 'Roboto Slab', serif;
-    font-size: 20px;
+    font-size: 17px;
     padding: 5px;
     background-color: #d9eee1;
 }
 
-.filters h3{
+.filters h3 {
     margin: 0 10px 0 0;
     font-weight: 400;
 }
 
 .range-filters h3 {
-    margin: 0 30px 0 0;
+    margin: 0 15px 0 0;
 }
 
 .popularity-filter,
@@ -28,21 +28,30 @@
 .search-filter,
 .color-filters,
 .quantity-filters,
-.price-filters{
+.price-filters {
     display: flex;
     align-items: center;
 }
 
-.sort{
-    width: 220px;
+.sort {
+    width: 230px;
     height: 30px;
     text-align: center;
     font-size: 16px;
-    background: #98B4D4;
+    background: #98b4d4;
     border: none;
     outline: none;
     border-radius: 5px;
     font-family: 'Roboto Slab', serif;
+}
+
+.search {
+    width: 200px;
+    height: 40px;
+    font-size: 20px;
+    font-family: 'Roboto Slab', serif;
+    border: none;
+    outline: none;
 }
 
 .styled-checkbox {
@@ -112,19 +121,27 @@
     font-size: 20px;
 }
 
-.reset-btn{
-    width: 200px;
+.reset-btn {
+    width: 180px;
     height: 40px;
     font-size: 20px;
     font-family: 'Roboto Slab', serif;
     border: none;
     outline: none;
     border-radius: 10px;
-    background: #88B04B;
+    background: #88b04b;
+    cursor: pointer;
 }
 
-.reset-buttons{
+.reset-buttons {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.no-items {
+    font-size: 50px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    font-family: 'Ubuntu', sans-serif;
 }

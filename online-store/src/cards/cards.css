@@ -81,12 +81,3 @@
 .active-btn {
     background-color: #88b04b;
 }
-
-@media (max-width: 1320px) {
-    .card {
-        width: 330px;
-    }
-    .card-img {
-        height: 180px;
-    }
-}

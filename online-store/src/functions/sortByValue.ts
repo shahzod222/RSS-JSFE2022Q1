@@ -9,6 +9,15 @@ let priceValues = [55000, 140000];
 let searchFilter: string;
 let sortFilter: string = 'sortNameAZ';
 
+enum sortTypes {
+    name = 'sortNameAZ',
+    nameRvr = 'sortNameZA',
+    price = 'sortPriceIncr',
+    priceRvr = 'sortPriceDecr',
+    quantity = 'sortQuantityIncr',
+    quantityRvr = 'sortQuantityDecr',
+}
+
 export function sortByType(type: string, value: string | string[], showHtml: boolean): Car[] {
     let sortedArr = allCars.slice();
 
@@ -65,22 +74,22 @@ export function sortByType(type: string, value: string | string[], showHtml: boo
     }
 
     switch (sortFilter) {
-        case 'sortNameAZ':
+        case sortTypes.name:
             sortedArr = sortByName(sortedArr, 'model');
             break;
-        case 'sortNameZA':
+        case sortTypes.nameRvr:
             sortedArr = sortByName(sortedArr, 'model').reverse();
             break;
-        case 'sortPriceIncr':
+        case sortTypes.price:
             sortedArr = sortedArr.sort((a, b) => a.price - b.price);
             break;
-        case 'sortPriceDecr':
+        case sortTypes.priceRvr:
             sortedArr = sortedArr.sort((a, b) => a.price - b.price).reverse();
             break;
-        case 'sortQuantityIncr':
+        case sortTypes.quantity:
             sortedArr = sortedArr.sort((a, b) => a.quantityInStock - b.quantityInStock);
             break;
-        case 'sortQuantityDecr':
+        case sortTypes.quantityRvr:
             sortedArr = sortedArr.sort((a, b) => a.quantityInStock - b.quantityInStock).reverse();
             break;
     }
