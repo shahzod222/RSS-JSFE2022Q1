@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseConfig = {
     entry: path.resolve(__dirname, 'src/index.ts'),
-    mode: 'development',
+    mode: 'prod',
     module: {
         rules: [
             { test: /\.css$/, use: [{ loader: 'style-loader' }, { loader: 'css-loader' }] },

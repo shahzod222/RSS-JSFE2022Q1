@@ -1,6 +1,6 @@
 export interface ICar {
     model: string;
-    price: string;
+    price: number;
     popularity: string;
     quantityInStock: number;
     cssClass: string;
@@ -11,7 +11,7 @@ export interface ICar {
 export class Car implements ICar {
     model: string;
     brand: string;
-    price: string;
+    price: number;
     popularity: string;
     quantityInStock: number;
     cssClass: string;
@@ -19,7 +19,7 @@ export class Car implements ICar {
     type: string;
     constructor(
         model: string,
-        price: string,
+        price: number,
         popularity: string,
         quantityInStock: number,
         cssClass: string,

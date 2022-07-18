@@ -52,6 +52,8 @@ header h2 {
 .filters {
     margin: 70px 0 20px 0;
     padding: 5px;
+    display: flex;
+    align-items: center;
 }
 
 main {

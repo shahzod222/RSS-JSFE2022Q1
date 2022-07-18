@@ -1,20 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap');
 
-.filters-by-value {
+.filters-by-value,
+.sort-filters,
+.range-filters {
     width: 440px;
+    height: 300px;
     display: flex;
     flex-direction: column;
     font-family: 'Roboto Slab', serif;
-    font-size: 22px;
-    padding: 20px;
+    font-size: 20px;
+    padding: 5px;
     background-color: #d9eee1;
 }
 
-.filters-by-value h2 {
-    font-size: 30px;
+.range-filters {
+    margin: 0 10px 0 0;
+}
+
+.filters-by-value h2,
+.sort-filters h2,
+.range-filters h2 {
+    font-size: 25px;
     font-family: 'Ubuntu', sans-serif;
-    margin: 0 0 10px 0 ;
+    margin: 10px 0;
     text-align: center;
+}
+
+.filters-by-value h3,
+.sort-filters h3,
+.range-filters h3 {
+    margin: 0 10px 0 0;
+    font-weight: 400;
+}
+
+.range-filters h3 {
+    margin: 0 0 20px 0;
 }
 
 .popularity-filter,
@@ -88,4 +108,22 @@
 .c-gray,
 .c-gray:checked {
     background-color: #939597;
+}
+
+.quantity-filters,
+.price-filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-filters {
+    margin-bottom: 10px;
+}
+
+#quantity-slider,
+#price-slider {
+    width: 250px;
+    font-size: 20px;
 }

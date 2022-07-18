@@ -26,7 +26,7 @@
                     <div class="filters-by-value">
                         <h2>Filters By Value</h2>
                         <div class="type-filters">
-                            Type:
+                            <h3>Type:</h3>
                             <label for="suv-type">&nbsp;SUV</label>
                             <input type="checkbox" name="car-type" id="suv-type" value="SUV" class="styled-checkbox" />
                             <label for="sedan-type">&nbsp;Sedan</label>
@@ -47,7 +47,8 @@
                             />
                         </div>
                         <div class="color-filters">
-                            Color:&nbsp;
+                            <h3>Color:</h3>
+                            &nbsp;
                             <input type="checkbox" value="Red" name="car-color" class="styled-checkbox color c-red" />
                             <input type="checkbox" value="Blue" name="car-color" class="styled-checkbox color c-blue" />
                             <input
@@ -71,7 +72,8 @@
                             />
                         </div>
                         <div class="popularity-filter">
-                            Popularity:&nbsp;
+                            <h3>Popularity:</h3>
+                            &nbsp;
                             <input
                                 type="checkbox"
                                 name="car-popular"
@@ -80,8 +82,36 @@
                             />
                         </div>
                     </div>
-                    <div class="range-filters"></div>
-                    <div class="search-sort-filters"></div>
+                    <div class="sort-filters">
+                        <div class="search-block">
+                            <h2>Search</h2>
+                            <input type="text" placeholder="Enter the name" class="search" />
+                        </div>
+                        <div class="sort-block">
+                            <h2>Sort</h2>
+                            <select class="sort">
+                                <option value="sortNameAZ">Sort by Name, A to Z</option>
+                                <option value="sortNameZA">Sort by Name, Z to A</option>
+                                <option value="sortPriceIncr">Sort by increasing Price</option>
+                                <option value="sortPriceDecr">Sort by decreasing Price</option>
+                                <option value="sortQuantityIncr">Sort by increasing Quantity</option>
+                                <option value="sortQuantityDecr">Sort by decreasing Quantity</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="range-filters">
+                        <h2>Range Filters</h2>
+                        <div class="quantity-filters">
+                            <h3>Quantity In Stock</h3>
+                            &nbsp;
+                            <div id="quantity-slider"></div>
+                        </div>
+                        <div class="price-filters">
+                            <h3>Price</h3>
+                            &nbsp;
+                            <div id="price-slider"></div>
+                        </div>
+                    </div>
                 </div>
                 <div class="cards-block"></div>
             </main>

@@ -1,50 +1,102 @@
-import { showCards } from '../cards/cards';
 import { allCars } from '../types/cars';
 import { Car } from '../types/types';
 
-export let sortedArr: Car[] = [];
-export let allTypes = new Set();
+let carTypes = new Array();
+let colorFilters = new Array();
+let popularityFilter: boolean;
+let quanityValues = [1, 5];
+let priceValues = [55000, 140000];
+let searchFilter: string;
+let sortFilter: string = 'sortNameAZ';
 
-export function sortByType(type: string, value: string, showHtml: boolean): Car[] {
-    allTypes.add(type);
-    if (showHtml) {
-        if (allTypes.size == 1) {
-            for (let i = 0; i < allCars.length; i++) {
-                let currentObj = allCars[i] as Car;
-                if (currentObj[type as keyof typeof currentObj] == value && type !== 'popularity') {
-                    sortedArr.push(allCars[i]);
-                }
-                if (type == 'popularity' && currentObj[type as keyof typeof currentObj] == 'Yes') {
-                    sortedArr.push(allCars[i]);
-                }
-            }
-        } else {
-            for (let i = 0; i < sortedArr.length; i++) {
-                let currentObj = sortedArr[i] as Car;
-                if (currentObj[type as keyof typeof currentObj] !== value && type !== 'popularity') {
-                    sortedArr.splice(i, 1);
-                    i--;
-                } else if (type == 'popularity' && currentObj[type as keyof typeof currentObj] !== 'Yes') {
-                    sortedArr.splice(i, 1);
-                    i--;
-                }
-            }
-        }
-        return sortedArr;
-    } else {
-        if (allTypes.size == 1) {
-            for (let i = 0; i < sortedArr.length; i++) {
-                let currentObj = sortedArr[i] as Car;
-                if (currentObj[type as keyof typeof currentObj] == value && type !== 'popularity') {
-                    sortedArr.splice(i, 1);
-                    i--;
-                } else if (type == 'popularity') {
-                    sortedArr = [];
-                    showCards(allCars);
-                }
-            }
-        }
+export function sortByType(type: string, value: string | string[], showHtml: boolean): Car[] {
+    let sortedArr = allCars.slice();
 
-        return sortedArr;
+    switch (type) {
+        case 'type':
+            if (showHtml) carTypes.push(value);
+            else carTypes.splice(carTypes.indexOf(value), 1);
+            break;
+        case 'color':
+            if (showHtml) colorFilters.push(value);
+            else colorFilters.splice(colorFilters.indexOf(value), 1);
+            break;
+        case 'popularity':
+            if (showHtml) popularityFilter = true;
+            else popularityFilter = false;
+            break;
+        case 'quantity':
+            quanityValues[0] = Number(value[0]);
+            quanityValues[1] = Number(value[1]);
+            break;
+        case 'price':
+            priceValues[0] = Number(value[0]);
+            priceValues[1] = Number(value[1]);
+            break;
+        case 'search':
+            searchFilter = String(value);
+            break;
+        case 'sort':
+            sortFilter = String(value);
+            break;
     }
+
+    if (carTypes.length !== 3 && carTypes.length !== 0) {
+        sortedArr = sortedArr.filter((car) => carTypes.includes(car.type));
+    }
+
+    if (colorFilters.length !== 6 && colorFilters.length !== 0) {
+        sortedArr = sortedArr.filter((car) => colorFilters.includes(car.color));
+    }
+
+    if (popularityFilter) {
+        sortedArr = sortedArr.filter((car) => car.popularity == 'Yes');
+    }
+
+    sortedArr = sortedArr.filter(
+        (car) => car.quantityInStock >= quanityValues[0] && car.quantityInStock <= quanityValues[1]
+    );
+    sortedArr = sortedArr.filter((car) => car.price >= priceValues[0] && car.price <= priceValues[1]);
+
+    if (searchFilter) {
+        sortedArr = sortedArr.filter((car) =>
+            (car.brand + ' ' + car.model).toLowerCase().includes(searchFilter.toLowerCase())
+        );
+    }
+
+    switch (sortFilter) {
+        case 'sortNameAZ':
+            sortedArr = sortByName(sortedArr, 'model');
+            break;
+        case 'sortNameZA':
+            sortedArr = sortByName(sortedArr, 'model').reverse();
+            break;
+        case 'sortPriceIncr':
+            sortedArr = sortedArr.sort((a, b) => a.price - b.price);
+            break;
+        case 'sortPriceDecr':
+            sortedArr = sortedArr.sort((a, b) => a.price - b.price).reverse();
+            break;
+        case 'sortQuantityIncr':
+            sortedArr = sortedArr.sort((a, b) => a.quantityInStock - b.quantityInStock);
+            break;
+        case 'sortQuantityDecr':
+            sortedArr = sortedArr.sort((a, b) => a.quantityInStock - b.quantityInStock).reverse();
+            break;
+    }
+
+    return sortedArr;
+}
+
+export function sortByName(array: Car[], value: string): Car[] {
+    let arr = array.sort(function (a, b) {
+        if (a[value as keyof typeof a] < b[value as keyof typeof b]) {
+            return -1;
+        }
+        if (a[value as keyof typeof a] > b[value as keyof typeof b]) {
+            return 1;
+        }
+        return 0;
+    });
+    return arr;
 }

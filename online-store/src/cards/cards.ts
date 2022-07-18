@@ -1,9 +1,13 @@
 import { Car, Cart } from '../types/types';
 import './cards.css';
 
-export let cardsBlock = document.querySelector('.cards-block') as HTMLDivElement;
+ let cardsBlock = document.querySelector('.cards-block') as HTMLDivElement;
 
 export function showCards(array: Car[]) {
+    cardsBlock.innerHTML = ''
+    if(array.length == 0){
+        cardsBlock.innerHTML = 'Items not found'
+    }
     for (let i = 0; i < array.length; i++) {
         let card = document.createElement('div') as HTMLDivElement;
         let cardImg = document.createElement('img') as HTMLImageElement;
@@ -52,7 +56,7 @@ export function showCards(array: Car[]) {
 
         cardTitle.innerHTML = `${array[i].brand} ${array[i].model}`;
         cardBrand.innerHTML = `Brand: ${array[i].brand}<img class="logo"></img>`;
-        cardPrice.innerHTML = `Price: ${array[i].price}`;
+        cardPrice.innerHTML = `Price: ${array[i].price}$`;
         cardPopularity.innerHTML = `Popularity: ${array[i].popularity}`;
         cardQuantity.innerHTML = `Quantity In Stock: ${array[i].quantityInStock}`;
         cardColor.innerHTML = `Color: ${array[i].color}`;
