@@ -1,5 +1,45 @@
-import { Car } from './types';
+import { ICar } from './types';
 import './cars.css';
+
+export class Car implements ICar {
+    model: string;
+    brand: string;
+    price: number;
+    popularity: string;
+    quantityInStock: number;
+    cssClass: string;
+    color: string;
+    type: string;
+    constructor(
+        model: string,
+        price: number,
+        popularity: string,
+        quantityInStock: number,
+        cssClass: string,
+        color: string,
+        type: string
+    ) {
+        this.model = model;
+        this.brand = 'BMW';
+        this.price = price;
+        this.popularity = popularity;
+        this.quantityInStock = quantityInStock;
+        this.cssClass = cssClass;
+        this.color = color;
+        this.type = type;
+    }
+}
+
+export class Cart {
+    putToCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+        countEl.innerHTML = `${Number(countEl.innerHTML) + 1}`;
+        el.innerHTML = 'Added To Cart';
+    }
+    removeFromCart(el: HTMLButtonElement, countEl: HTMLParagraphElement) {
+        countEl.innerHTML = `${Number(countEl.innerHTML) - 1}`;
+        el.innerHTML = 'Add To Cart';
+    }
+}
 
 let car1: Car = new Car('M5', 105000, 'Yes', 3, 'm5', 'Red', 'Sedan');
 let car2: Car = new Car('M8', 130000, 'No', 4, 'm8', 'Red', 'Sedan');

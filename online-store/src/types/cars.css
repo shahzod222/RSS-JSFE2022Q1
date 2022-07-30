@@ -35,18 +35,7 @@
     background: url('../assets/z4.webp');
 }
 
-.i4,
-.i7,
-.ix,
-.m5,
-.m8,
-.s5,
-.s8,
-.x4m,
-.x5m,
-.x6,
-.x7,
-.z4 {
+.card-img {
     background-color: white;
     background-size: 420px 220px;
 }

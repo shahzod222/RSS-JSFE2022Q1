@@ -1,5 +1,5 @@
 import { allCars } from '../types/cars';
-import { Car } from '../types/types';
+import { Car } from '../types/cars';
 
 let carTypes = new Array();
 let colorFilters = new Array();

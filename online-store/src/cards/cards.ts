@@ -1,4 +1,4 @@
-import { Car } from '../types/types';
+import { Car } from '../types/cars';
 import './cards.css';
 import { cart } from './cart';
 
