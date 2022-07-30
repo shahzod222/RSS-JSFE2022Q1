@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&family=Ubuntu:wght@500&display=swap');
+
+.cars {
+    margin-top: 20px;
+}
+
+form {
+    display: flex;
+    align-items: center;
+}
+
+form input[type='color']:disabled,
+form button:disabled {
+    cursor: default;
+}
+
+form input[type='text'] {
+    border: none;
+    outline: none;
+    width: 200px;
+    height: 30px;
+    font-size: 18px;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+form input[type='color'] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    height: 42px;
+    width: 70px;
+    padding: 0;
+    margin: 0 15px 0 0;
+    position: relative;
+    right: 2px;
+}
+
+form button,
+.race-btns button,
+.remove-car,
+.start-stop button,
+.update-btn,
+.gen-cars,
+.prev-btn,
+.next-btn {
+    width: 150px;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    font-size: 16px;
+    font-family: 'Ubuntu', sans-serif;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.add-car:hover,
+.remove-car:hover,
+.start-stop button:hover,
+.update-btn:hover,
+.race-btns button:hover,
+.gen-cars:hover {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px,
+        rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+}
+
+.add-car {
+    background-color: #95ba5e;
+}
+
+.add-car:hover {
+    background-color: #7ca145;
+}
+
+.car-block {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-info {
+    display: flex;
+    align-items: center;
+}
+
+.car-name {
+    color: #a0daa9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    margin: 0;
+    text-shadow: 0 0 5px black;
+}
+
+.car-icon {
+    position: relative;
+    animation-timing-function: linear;
+    width: 120px;
+    height: 50px;
+}
+
+.car-model {
+    width: 120px;
+    height: 50px;
+    position: relative;
+}
+
+.l-wheel,
+.r-wheel {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    background: url('../wheel.png');
+    background-size: 20px 20px;
+    display: block;
+}
+
+.car-icon svg g {
+    display: none;
+}
+
+.l-wheel {
+    bottom: 30px;
+    left: 12.5px;
+}
+
+.r-wheel {
+    bottom: 49px;
+    left: 89px;
+}
+
+.remove-car {
+    margin: 0 15px;
+    background: #e3654f;
+}
+.remove-car:hover {
+    background: #dd4124;
+}
+
+.car-start {
+    width: 100px;
+}
+
+.road {
+    position: relative;
+    bottom: 18px;
+    width: 100%;
+}
+
+.car-road {
+    display: flex;
+    align-items: center;
+}
+
+.start-stop {
+    display: flex;
+}
+
+.start-stop button {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+}
+
+.update-btn {
+    background: #4572ba;
+}
+
+.update-btn:hover {
+    background: #34568b;
+}
+
+.start-stop button[disabled] {
+    cursor: default;
+}
+.start-stop button[disabled]:hover {
+    box-shadow: none;
+}
+
+.race-road {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.finish-icon {
+    width: 50px;
+    position: relative;
+    bottom: 4px;
+    right: 170px;
+}

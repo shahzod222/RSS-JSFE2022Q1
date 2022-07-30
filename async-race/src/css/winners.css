@@ -1,0 +1,10 @@
+.winner-info {
+    display: flex;
+    margin: 5px 0;
+    color: white;
+    font-size: 15px;
+}
+
+.winner-info p {
+    margin: 0 5px;
+}
