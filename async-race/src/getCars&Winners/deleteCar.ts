@@ -2,7 +2,7 @@ import { garage, winners } from '../types/types';
 import { showCar } from './showCar';
 
 export async function deleteCar() {
-    let deleteBtns = document.querySelectorAll('.remove-car') as NodeListOf<HTMLButtonElement>;
+    const deleteBtns = document.querySelectorAll('.remove-car') as NodeListOf<HTMLButtonElement>;
 
     deleteBtns.forEach((el) => {
         el.addEventListener('click', () => {

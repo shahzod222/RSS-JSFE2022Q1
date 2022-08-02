@@ -3,22 +3,28 @@ import { generate100Cars } from '../getCars&Winners/generate100Cars';
 import { pagination } from '../getCars&Winners/pagination';
 import { race } from '../getCars&Winners/race';
 import { showCar } from '../getCars&Winners/showCar';
+import { renderWinnersPagination } from '../getCars&Winners/winnersPagination';
 import { showHide } from '../views/view';
 
-export let cars = document.createElement('div');
-export let garageLength = document.createElement('p');
-export let pageNumber = document.createElement('p');
-export let prevPage = document.createElement('button');
-export let nextPage = document.createElement('button');
-export let winnersBlock = document.createElement('div');
+export const cars = document.createElement('div');
+export const garageLength = document.createElement('p');
+export const pageNumber = document.createElement('p');
+export const prevPage = document.createElement('button');
+export const nextPage = document.createElement('button');
+export const winnersBlock = document.createElement('div');
 
 export async function renderHtml() {
-    let garageBtn = document.createElement('button');
-    let winnersBtn = document.createElement('button');
-    let generateBtn = document.createElement('button');
+    const garageBtn = document.createElement('button');
+    const winnersBtn = document.createElement('button');
+    const generateBtn = document.createElement('button');
 
-    let garageBlock = document.createElement('div');
-    let raceBtns = document.createElement('div');
+    const garageBlock = document.createElement('div');
+    const viewBtns = document.createElement('div');
+    const raceBtns = document.createElement('div');
+    const paginationBlock = document.createElement('div');
+    const formBlock = document.createElement('div');
+    const modalBody = document.createElement('div');
+    const modalContent = document.createElement('div');
 
     garageBtn.className = 'garage-view';
     winnersBtn.className = 'winners-view';
@@ -27,26 +33,32 @@ export async function renderHtml() {
     raceBtns.className = 'race-btns';
     cars.className = 'cars';
     generateBtn.className = 'gen-cars';
-    pageNumber.className = 'page-num';
-    prevPage.className = 'prev-btn';
-    nextPage.className = 'next-btn';
+    pageNumber.className = 'page-num pag-num';
+    prevPage.className = 'prev-btn pag-prev-btn';
+    nextPage.className = 'next-btn pag-next-btn';
+    paginationBlock.className = 'pagination';
+    garageLength.className = 'garage-length length';
+    viewBtns.className = 'view-btns';
+    formBlock.className = 'form-block';
+    modalBody.className = 'modal-body hidden';
+    modalContent.className = 'modal-content';
 
     garageBtn.innerHTML = 'Garage';
     winnersBtn.innerHTML = 'Winners';
-    pageNumber.innerHTML = '1';
     generateBtn.innerHTML = 'Generate 100 Cars';
-    prevPage.innerHTML = 'Previos';
-    nextPage.innerHTML = 'Next';
+    pageNumber.innerHTML = '1';
+    prevPage.innerHTML = '<';
+    nextPage.innerHTML = '>';
 
     for (let i = 0; i < 2; i++) {
-        let form = document.createElement('form');
-        let inputText = document.createElement('input');
-        let inputColor = document.createElement('input');
-        let submitBtn = document.createElement('button');
-        let raceBtn = document.createElement('button');
+        const form = document.createElement('form');
+        const inputText = document.createElement('input');
+        const inputColor = document.createElement('input');
+        const submitBtn = document.createElement('button');
+        const raceBtn = document.createElement('button');
 
         form.action = '#';
-        inputText.type = 'text';
+        inputText.type = 'search';
         inputColor.type = 'color';
         submitBtn.type = 'submit';
 
@@ -69,28 +81,37 @@ export async function renderHtml() {
 
             raceBtn.innerHTML = 'Reset Race';
             submitBtn.innerHTML = 'Update Car';
-            inputColor.value = '#808080';
+            inputColor.value = '#efefef';
             inputColor.disabled = true;
             inputText.disabled = true;
             submitBtn.disabled = true;
         }
-        garageBlock.append(form);
+
         form.append(inputText);
         form.append(inputColor);
         form.append(submitBtn);
+        formBlock.append(form);
+        garageBlock.append(formBlock);
         raceBtns.append(raceBtn);
     }
+
+    paginationBlock.append(prevPage);
+    paginationBlock.append(pageNumber);
+    paginationBlock.append(nextPage);
+
+    modalBody.append(modalContent);
+
+    viewBtns.append(garageBtn);
+    viewBtns.append(winnersBtn);
 
     garageBlock.append(raceBtns);
     garageBlock.append(generateBtn);
     garageBlock.append(garageLength);
-    garageBlock.append(pageNumber);
     garageBlock.append(cars);
-    garageBlock.append(prevPage);
-    garageBlock.append(nextPage);
+    garageBlock.append(paginationBlock);
+    garageBlock.append(modalBody);
 
-    document.body.append(garageBtn);
-    document.body.append(winnersBtn);
+    document.body.append(viewBtns);
     document.body.append(garageBlock);
     document.body.append(winnersBlock);
 
@@ -100,4 +121,5 @@ export async function renderHtml() {
     generate100Cars();
     showCar();
     pagination();
+    renderWinnersPagination();
 }
