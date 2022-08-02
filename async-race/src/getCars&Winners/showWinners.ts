@@ -21,14 +21,11 @@ export async function showWinners() {
     tHeader.innerHTML = '';
     tBody.innerHTML = '';
     winnersContent.innerHTML = '';
-
     winnersContent.className = 'winners-content';
-
     const winnersLength = document.createElement('p');
     winnersLength.className = 'length';
     winnersLength.innerHTML = `Winners: ${allWinners.length}`;
     winnersContent.append(winnersLength);
-
     const tableHeaders = document.createElement('tr');
 
     for (let i = 0; i < 5; i++) {
@@ -41,14 +38,12 @@ export async function showWinners() {
 
         tableHeaders.append(tableHeader);
     }
-
     tHeader.append(tableHeaders);
     table.append(tHeader);
 
     for (let i = 0; i < pagedWinners.length; i++) {
         await showWinnerInHtml(i + 1, pagedWinners[i].id, pagedWinners[i].wins, pagedWinners[i].time);
     }
-
     table.append(tBody);
     winnersContent.append(table);
     winnersBlock.append(winnersContent);

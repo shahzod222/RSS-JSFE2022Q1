@@ -28,56 +28,9 @@ export async function showCar() {
 }
 
 async function showCarInHtml(model: string, color: string, id: number) {
-    const carBlock = document.createElement('div');
-    const carInfo = document.createElement('div');
-    const startStop = document.createElement('div');
-    const raceRoad = document.createElement('div');
-    const carRoad = document.createElement('div');
-    const car = document.createElement('div');
-
-    const deleteBtn = document.createElement('button');
-    const startCar = document.createElement('button');
-    const stopCar = document.createElement('button');
-    const updateBtn = document.createElement('button');
-
-    const carName = document.createElement('p');
-    const carImg = document.createElement('span');
-    const road = document.createElement('hr');
-    const finishFlag = document.createElement('span');
-    const carSmoke = document.createElement('span');
-
-    carName.innerHTML = model;
-    deleteBtn.innerHTML = 'Remove Car';
-    startCar.innerHTML = 'A';
-    stopCar.innerHTML = 'B';
-    carImg.innerHTML = svg(color);
-    updateBtn.innerHTML = 'Update Car';
-
-    deleteBtn.name = String(id);
-    startCar.name = String(id);
-    stopCar.name = String(id);
-    car.id = String(id);
-    carImg.id = `car-${String(id)}`;
-    updateBtn.name = String(id);
-    carName.id = `name-${String(id)}`;
-
-    carBlock.className = 'car-block';
-    carInfo.className = 'car-info';
-    deleteBtn.className = 'remove-car';
-    carName.className = 'car-name';
-    carImg.className = `car-icon ${model}`;
-    road.className = 'road';
-    startCar.className = 'car-start';
-    stopCar.className = 'car-stop';
-    carRoad.className = 'car-road';
-    startStop.className = 'start-stop';
-    raceRoad.className = 'race-road';
-    finishFlag.className = 'finish-icon';
-    updateBtn.className = 'update-btn';
-    car.className = 'car-model';
-    carSmoke.className = 'car-smoke';
-
-    stopCar.disabled = true;
+    const [carBlock, carInfo, startStop, raceRoad, carRoad, car] = createDivs(id);
+    const [deleteBtn, startCar, stopCar, updateBtn] = createButtons(id);
+    const [carName, carImg, road, finishFlag, carSmoke] = createOtherElems(model, color, id);
 
     carBlock.append(carInfo);
     carBlock.append(carRoad);
@@ -118,4 +71,72 @@ function checkPagBtns(allCarsLength: number) {
     } else {
         prevPage.disabled = false;
     }
+}
+
+function createDivs(id: number): HTMLDivElement[] {
+    const carBlock = document.createElement('div');
+    const carInfo = document.createElement('div');
+    const startStop = document.createElement('div');
+    const raceRoad = document.createElement('div');
+    const carRoad = document.createElement('div');
+    const car = document.createElement('div');
+
+    carBlock.className = 'car-block';
+    carInfo.className = 'car-info';
+    carRoad.className = 'car-road';
+    startStop.className = 'start-stop';
+    raceRoad.className = 'race-road';
+    car.className = 'car-model';
+    car.id = String(id);
+
+    return [carBlock, carInfo, startStop, raceRoad, carRoad, car];
+}
+
+function createButtons(id: number): HTMLButtonElement[] {
+    const deleteBtn = document.createElement('button');
+    const startCar = document.createElement('button');
+    const stopCar = document.createElement('button');
+    const updateBtn = document.createElement('button');
+
+    startCar.className = 'car-start';
+    stopCar.className = 'car-stop';
+    updateBtn.className = 'update-btn';
+    deleteBtn.className = 'remove-car';
+    stopCar.disabled = true;
+
+    deleteBtn.innerHTML = 'Remove Car';
+    updateBtn.name = String(id);
+    startCar.innerHTML = 'A';
+    stopCar.innerHTML = 'B';
+    updateBtn.innerHTML = 'Update Car';
+    deleteBtn.name = String(id);
+    startCar.name = String(id);
+    stopCar.name = String(id);
+
+    return [deleteBtn, startCar, stopCar, updateBtn];
+}
+
+function createOtherElems(
+    model: string,
+    color: string,
+    id: number
+): [HTMLParagraphElement, HTMLSpanElement, HTMLHRElement, HTMLSpanElement, HTMLSpanElement] {
+    const carName = document.createElement('p');
+    const carImg = document.createElement('span');
+    const road = document.createElement('hr');
+    const finishFlag = document.createElement('span');
+    const carSmoke = document.createElement('span');
+
+    carName.className = 'car-name';
+    carImg.className = `car-icon ${model}`;
+    road.className = 'road';
+    finishFlag.className = 'finish-icon';
+    carSmoke.className = 'car-smoke';
+
+    carName.innerHTML = model;
+    carImg.innerHTML = svg(color);
+    carImg.id = `car-${String(id)}`;
+    carName.id = `name-${String(id)}`;
+
+    return [carName, carImg, road, finishFlag, carSmoke];
 }
