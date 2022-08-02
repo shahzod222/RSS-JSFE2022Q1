@@ -4,11 +4,11 @@ import { showCar } from './showCar';
 let carId = 0;
 
 export function updateCar() {
-    let updateCarBtn = document.querySelector('.update-car') as HTMLButtonElement;
-    let carName = document.querySelector('.update-name') as HTMLInputElement;
-    let carColor = document.querySelector('.update-color') as HTMLInputElement;
+    const updateCarBtn = document.querySelector('.update-car') as HTMLButtonElement;
+    const carName = document.querySelector('.update-name') as HTMLInputElement;
+    const carColor = document.querySelector('.update-color') as HTMLInputElement;
 
-    let updateBtns = document.querySelectorAll('.update-btn') as NodeListOf<HTMLButtonElement>;
+    const updateBtns = document.querySelectorAll('.update-btn') as NodeListOf<HTMLButtonElement>;
 
     updateBtns.forEach((el) => {
         el.addEventListener('click', () => {
@@ -21,13 +21,12 @@ export function updateCar() {
     });
     updateCarBtn.addEventListener('click', () => {
         if (carName.value) {
-            console.log(carId);
             garage.updateCar(carId, carName.value, carColor.value);
             showCar();
             carName.disabled = true;
             carName.value = '';
             carColor.disabled = true;
-            carColor.value = '#808080';
+            carColor.value = '#efefef';
             updateCarBtn.disabled = true;
         }
     });

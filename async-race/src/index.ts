@@ -7,5 +7,6 @@ import './getCars&Winners/deleteCar';
 import './getCars&Winners/startStop';
 import './getCars&Winners/race';
 import './getCars&Winners/showWinners';
+import './getCars&Winners/modalWindow';
 
 renderHtml();

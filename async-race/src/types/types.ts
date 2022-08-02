@@ -22,6 +22,9 @@ export interface IEngineStart extends Promise<Response> {
 }
 
 class Garage {
+    getCar(id: number) {
+        return fetch(urls.garage + `/${id}`);
+    }
     getAllCars() {
         return fetch(urls.garage);
     }
@@ -55,10 +58,10 @@ class Garage {
 
 class Engine {
     async start(id: number): Promise<IEngineStart> {
-        let res = await fetch(urls.engine + `?id=${id}&status=started`, {
+        const res = await fetch(urls.engine + `?id=${id}&status=started`, {
             method: 'PATCH',
         });
-        let data = res.json() as IEngineStart;
+        const data = res.json() as IEngineStart;
         return data;
     }
     async stop(id: number) {
@@ -67,7 +70,7 @@ class Engine {
         });
     }
     async drive(id: number) {
-        let res = await fetch(urls.engine + `?id=${id}&status=drive`, {
+        const res = await fetch(urls.engine + `?id=${id}&status=drive`, {
             method: 'PATCH',
         });
         return res.status;
@@ -78,8 +81,13 @@ class Winners {
     getAllWiners() {
         return fetch(urls.winners);
     }
+
+    async getLimitedWinners(pageN: number) {
+        return await fetch(urls.winners + `?_page=${pageN}&_limit=10`);
+    }
+
     async addWinner(id: number, time: number) {
-        let res = await fetch(urls.winners, {
+        const res = await fetch(urls.winners, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -89,13 +97,13 @@ class Winners {
         return res;
     }
     async getWinner(id: number) {
-        let res = await fetch(urls.winners + `/${id}`, {
+        const res = await fetch(urls.winners + `/${id}`, {
             method: 'GET',
         });
         return res.json() as unknown as IWinner;
     }
     async updateWinner(id: number, wins: number, time: number) {
-        let res = await fetch(urls.winners + `/${id}`, {
+        const res = await fetch(urls.winners + `/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
@@ -111,6 +119,6 @@ class Winners {
     }
 }
 
-export let garage = new Garage();
-export let enigine = new Engine();
-export let winners = new Winners();
+export const garage = new Garage();
+export const enigine = new Engine();
+export const winners = new Winners();
