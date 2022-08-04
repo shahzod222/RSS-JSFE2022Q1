@@ -58,14 +58,16 @@ export async function start(
 
     const [animation, elPosition, lW, rW] = animations(car, lWheel, rWheel, time, parent);
 
-    const resetClicked = false;
+    let resetClicked = false;
 
     resetBtn?.addEventListener('click', () => {
-        resetOrStop(lW, rW, animation, elPosition, smoke, resetClicked, stopBtn);
+        resetOrStop(lW, rW, animation, elPosition, smoke, stopBtn);
+        resetClicked = true;
     });
 
     stopBtn.addEventListener('click', () => {
-        resetOrStop(lW, rW, animation, elPosition, smoke, resetClicked, stopBtn);
+        resetOrStop(lW, rW, animation, elPosition, smoke, stopBtn);
+        resetClicked = true;
     });
 
     const driveStatus = await enigine.drive(Number(id));
@@ -157,7 +159,6 @@ function resetOrStop(
     animation: Animation,
     elPosition: ReturnType<typeof setTimeout>,
     smoke: HTMLSpanElement,
-    resetClicked: boolean,
     stopBtn: HTMLButtonElement
 ) {
     animation.cancel();
@@ -166,7 +167,6 @@ function resetOrStop(
     rW.cancel();
     smoke.style.display = 'none';
     stopBtn.disabled = true;
-    resetClicked = true;
 }
 
 function getElements(

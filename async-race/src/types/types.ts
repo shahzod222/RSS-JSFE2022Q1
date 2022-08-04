@@ -82,8 +82,12 @@ class Winners {
         return fetch(urls.winners);
     }
 
-    async getLimitedWinners(pageN: number) {
-        return await fetch(urls.winners + `?_page=${pageN}&_limit=10`);
+    async getLimitedWinners(pageN: number, sortType?: string, sortOrder?: string) {
+        if (sortType && sortOrder) {
+            return await fetch(urls.winners + `?_page=${pageN}&_limit=10&_sort=${sortType}&_order=${sortOrder}`);
+        } else {
+            return await fetch(urls.winners + `?_page=${pageN}`);
+        }
     }
 
     async addWinner(id: number, time: number) {

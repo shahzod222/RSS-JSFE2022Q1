@@ -7,10 +7,19 @@ import { nextBtn, prevBtn, winnersPageNumber } from './winnersPagination';
 const winnersContent = document.createElement('div');
 const table = document.createElement('table');
 const tBody = document.createElement('tbody');
+const winnersLength = document.createElement('p');
 const tHeader = document.createElement('thead');
+export const winnersInfo = document.createElement('div');
 
-export async function showWinners() {
-    const res = await winners.getLimitedWinners(Number(winnersPageNumber.innerHTML));
+winnersInfo.className = 'winners-info';
+
+export async function showWinners(sortType?: string, sortOrder?: string) {
+    let res;
+    if (sortType && sortOrder) {
+        res = await winners.getLimitedWinners(Number(winnersPageNumber.innerHTML), sortType, sortOrder);
+    } else {
+        res = await winners.getLimitedWinners(Number(winnersPageNumber.innerHTML));
+    }
     const pagedWinners = (await res.json()) as IWinner[];
 
     const res2 = await winners.getAllWiners();
@@ -20,12 +29,13 @@ export async function showWinners() {
 
     tHeader.innerHTML = '';
     tBody.innerHTML = '';
-    winnersContent.innerHTML = '';
-    winnersContent.className = 'winners-content';
-    const winnersLength = document.createElement('p');
-    winnersLength.className = 'length';
     winnersLength.innerHTML = `Winners: ${allWinners.length}`;
-    winnersContent.append(winnersLength);
+
+    winnersContent.className = 'winners-content';
+    winnersLength.className = 'length';
+
+    winnersInfo.append(winnersLength);
+    winnersContent.append(winnersInfo);
     const tableHeaders = document.createElement('tr');
 
     for (let i = 0; i < 5; i++) {
@@ -40,7 +50,6 @@ export async function showWinners() {
     }
     tHeader.append(tableHeaders);
     table.append(tHeader);
-
     for (let i = 0; i < pagedWinners.length; i++) {
         await showWinnerInHtml(i + 1, pagedWinners[i].id, pagedWinners[i].wins, pagedWinners[i].time);
     }
