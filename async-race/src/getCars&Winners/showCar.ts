@@ -58,10 +58,10 @@ async function showCarInHtml(model: string, color: string, id: number) {
 }
 
 function checkPagBtns(allCarsLength: number) {
-    if ((Number(pageNumber.innerHTML) - 1) * 4 === allCarsLength) {
+    if ((Number(pageNumber.innerHTML) - 1) * 7 === allCarsLength) {
         pageNumber.innerHTML = String(Number(pageNumber.innerHTML) - 1);
     }
-    if (Number(pageNumber.innerHTML) * 4 >= allCarsLength) {
+    if (Number(pageNumber.innerHTML) * 7 >= allCarsLength) {
         nextPage.disabled = true;
     } else {
         nextPage.disabled = false;
