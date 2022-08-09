@@ -29,7 +29,7 @@ class Garage {
         return fetch(urls.garage);
     }
     async getLimitedCars(pageN: number) {
-        return fetch(urls.garage + `?_page=${pageN}&_limit=4`);
+        return fetch(urls.garage + `?_page=${pageN}&_limit=7`);
     }
     addCar(carName: string, carColor: string) {
         fetch(urls.garage, {
